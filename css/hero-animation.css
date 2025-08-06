@@ -1,0 +1,288 @@
+/* 
+   HERO TITLE ANIMATION - Educational CSS for Future Engineers
+   
+   PURPOSE: This file demonstrates professional text animation techniques
+   LEARNING GOALS: 
+   - Understanding CSS keyframe animations
+   - Working with gradient backgrounds on text
+   - Creating smooth, performant animations
+   - Implementing accessibility best practices
+   
+   ENGINEERING PRINCIPLES:
+   - Clean, readable code structure
+   - Performance-optimized animations
+   - Accessibility-first approach
+   - Maintainable and scalable design
+*/
+
+/* ===== HERO TITLE BASE STYLES ===== */
+
+/* 
+   Hero title container
+   This is the parent element that holds both the static and animated text
+*/
+.hero-title {
+    /* Typography settings */
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+    color: var(--text-dark);
+    
+    /* Layout settings */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    /* Visual enhancement */
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+/* 
+   Static title text
+   This part of the title remains unchanged for readability
+*/
+.title-main {
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: var(--space-2);
+    
+    /* No animations applied to maintain readability */
+}
+
+/* 
+   Animated highlight text
+   This is the "Effortlessly" word that will have the animation
+*/
+.title-highlight {
+    /* Position relative allows for advanced positioning if needed */
+    position: relative;
+    display: inline-block;
+    
+    /* Remove pointer events to prevent interference with animation */
+    pointer-events: none;
+    
+    /* Base color before animation starts */
+    color: var(--primary-blue);
+}
+
+/* ===== ANIMATION SYSTEM ===== */
+
+/* 
+   Animated text class
+   This class applies the gradient background and animation
+   
+   KEY CONCEPTS FOR STUDENTS:
+   - background-clip: text makes gradient show through text
+   - -webkit-background-clip provides browser compatibility
+   - background-size larger than 100% enables animation movement
+*/
+.animated-text {
+    /* Create gradient background */
+    background: linear-gradient(
+        135deg,                    /* 135 degrees creates diagonal gradient */
+        var(--primary-blue) 0%,    /* Start color at 0% position */
+        var(--light-blue) 50%,     /* Middle color at 50% position */
+        var(--primary-blue) 100%   /* End color at 100% position */
+    );
+    
+    /* Make gradient visible through text */
+    -webkit-background-clip: text;           /* Webkit browsers (Chrome, Safari) */
+    -webkit-text-fill-color: transparent;   /* Hide original text color */
+    background-clip: text;                   /* Standard property */
+    
+    /* Enable animation by making background larger than element */
+    background-size: 200% 200%;
+    
+    /* Apply the animation */
+    animation: textGradientShift 3s ease-in-out infinite;
+}
+
+/* 
+   KEYFRAME ANIMATION: textGradientShift
+   
+   EXPLANATION FOR STUDENTS:
+   - Keyframes define animation steps at specific percentages
+   - 0% is animation start, 50% is middle, 100% is end
+   - background-position controls which part of gradient is visible
+   - Different gradients at each step create color transition effect
+   
+   TIMING BREAKDOWN:
+   - 0% to 50%: 1.5 seconds of color shifting
+   - 50% to 100%: 1.5 seconds returning to original
+   - Total cycle: 3 seconds, then repeats infinitely
+*/
+@keyframes textGradientShift {
+    /* Animation start state */
+    0% {
+        background-position: 0% 50%;
+        background: linear-gradient(
+            135deg,
+            var(--primary-blue) 0%,
+            var(--light-blue) 50%,
+            var(--primary-blue) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    
+    /* Animation peak state */
+    50% {
+        background-position: 100% 50%;
+        background: linear-gradient(
+            135deg,
+            var(--light-blue) 0%,
+            var(--primary-blue) 50%,
+            var(--dark-blue) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    
+    /* Animation end state (returns to start) */
+    100% {
+        background-position: 0% 50%;
+        background: linear-gradient(
+            135deg,
+            var(--primary-blue) 0%,
+            var(--light-blue) 50%,
+            var(--primary-blue) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+/* ===== ACCESSIBILITY FEATURES ===== */
+
+/* 
+   Reduced motion support
+   
+   IMPORTANT FOR STUDENTS:
+   This is a professional requirement for web accessibility
+   Some users have vestibular disorders and need reduced motion
+   Always provide fallbacks for animations
+*/
+@media (prefers-reduced-motion: reduce) {
+    .animated-text {
+        /* Disable animation completely */
+        animation: none;
+        
+        /* Provide static fallback appearance */
+        background: var(--primary-blue);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* 
+   Mobile optimization
+   
+   STUDENT LEARNING:
+   - Mobile devices have less processing power
+   - Smaller screens need different typography
+   - Battery life considerations for animations
+*/
+@media (max-width: 768px) {
+    .hero-title {
+        /* Smaller font size for mobile screens */
+        font-size: var(--font-size-3xl);
+        
+        /* Center alignment works better on mobile */
+        align-items: center;
+        text-align: center;
+    }
+    
+    .animated-text {
+        /* Slower animation on mobile to save battery */
+        animation-duration: 4s;
+    }
+}
+
+/* 
+   Tablet optimization
+   
+   DESIGN PRINCIPLE:
+   Progressive enhancement - start with mobile, enhance for larger screens
+*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .animated-text {
+        /* Standard animation speed for tablets */
+        animation-duration: 3s;
+    }
+}
+
+/* ===== BROWSER COMPATIBILITY ===== */
+
+/* 
+   Fallback for older browsers
+   
+   ENGINEERING PRINCIPLE:
+   Always provide fallbacks for newer CSS features
+   This ensures your site works for all users
+*/
+@supports not (background-clip: text) {
+    .animated-text {
+        /* Fallback for browsers that don't support background-clip */
+        background: none;
+        color: var(--primary-blue);
+        animation: none;
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* 
+   GPU acceleration hints
+   
+   ADVANCED CONCEPT FOR STUDENTS:
+   These properties hint to the browser to use GPU acceleration
+   This makes animations smoother and more efficient
+*/
+.animated-text {
+    /* Force GPU layer creation */
+    will-change: background-position;
+    
+    /* Enable hardware acceleration */
+    transform: translateZ(0);
+    
+    /* Optimize for animations */
+    backface-visibility: hidden;
+}
+
+/* 
+   LEARNING EXERCISES FOR STUDENTS:
+   
+   1. BEGINNER LEVEL:
+      - Change animation duration from 3s to 5s
+      - Modify colors in the gradient
+      - Try different gradient angles (90deg, 180deg, 270deg)
+   
+   2. INTERMEDIATE LEVEL:
+      - Add a scale transform to make text grow/shrink
+      - Create a fade-in effect for the entire title
+      - Add multiple text shadows for depth
+   
+   3. ADVANCED LEVEL:
+      - Create a typing animation effect
+      - Add particle effects around the text
+      - Implement theme switching with different color schemes
+   
+   PROFESSIONAL DEVELOPMENT GOALS:
+   - Understand performance implications of animations
+   - Learn accessibility requirements for web animations
+   - Practice writing maintainable, documented code
+   - Study how animations enhance user experience
+   
+   NEXT STEPS:
+   - Research CSS animation performance best practices
+   - Study how major websites implement text animations
+   - Learn about Web Animations API for more complex effects
+   - Understand the relationship between CSS and JavaScript animations
+*/

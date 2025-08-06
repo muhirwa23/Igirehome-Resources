@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Lost & Found</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/hero-animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-search-location brand-icon"></i>
+                <span class="brand-text">Lost & Found</span>
+            </a>
+            <div class="nav-links">
+                <a href="register.html" class="nav-link">Need an account?</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container" style="max-width: 450px; margin: 0 auto;">
+                <div class="card auth-card">
+                    <div class="card-header">
+                        <h1 class="card-title">Welcome Back</h1>
+                        <p class="card-description">Sign in to your Lost & Found management account to continue.</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <!-- Success/Error Messages -->
+                        <div id="messageContainer"></div>
+                        
+                        <form id="loginForm" novalidate>
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i> Email Address
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    class="form-input" 
+                                    placeholder="Enter your email address"
+                                    required
+                                    autocomplete="email"
+                                >
+                                <div class="form-error" id="emailError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="form-label">
+                                    <i class="fas fa-lock"></i> Password
+                                </label>
+                                <div style="position: relative;">
+                                    <input 
+                                        type="password" 
+                                        id="password" 
+                                        name="password" 
+                                        class="form-input" 
+                                        placeholder="Enter your password"
+                                        required
+                                        autocomplete="current-password"
+                                    >
+                                    <button 
+                                        type="button" 
+                                        id="togglePassword" 
+                                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--gray-500); cursor: pointer;"
+                                    >
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-error" id="passwordError"></div>
+                            </div>
+
+                            <!-- Remember Me & Forgot Password -->
+                            <div class="form-group" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-6);">
+                                <label class="checkbox-label" style="display: flex; align-items: center; gap: var(--space-2); cursor: pointer;">
+                                    <input type="checkbox" id="rememberMe" name="rememberMe">
+                                    <span style="font-size: var(--font-size-sm); color: var(--gray-600);">Remember me</span>
+                                </label>
+                                <a href="#" style="color: var(--primary-600); font-size: var(--font-size-sm); text-decoration: none;">
+                                    Forgot password?
+                                </a>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary btn-full btn-large" id="submitBtn">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Sign In
+                            </button>
+                        </form>
+
+                        <!-- Demo Accounts -->
+                        <div style="margin-top: var(--space-6); padding-top: var(--space-6); border-top: 1px solid var(--gray-200);">
+                            <p style="text-align: center; color: var(--gray-600); font-size: var(--font-size-sm); margin-bottom: var(--space-4);">
+                                Try with demo accounts:
+                            </p>
+                            <div style="display: grid; gap: var(--space-2);">
+                                <button type="button" class="btn btn-secondary btn-small demo-login" data-email="admin@school.edu" data-password="admin123">
+                                    <i class="fas fa-user-shield"></i> Admin Demo
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-small demo-login" data-email="teacher@school.edu" data-password="teacher123">
+                                    <i class="fas fa-chalkboard-teacher"></i> Teacher Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer" style="text-align: center;">
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">
+                            Don't have an account? 
+                            <a href="register.html" style="color: var(--primary-600); font-weight: 500;">Create one here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/validation.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

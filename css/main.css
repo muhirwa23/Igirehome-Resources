@@ -1,0 +1,2779 @@
+/* ===== CSS RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* MONOCHROMATIC BLUES - Premium SaaS Color Palette */
+    /* Primary blue family for main brand elements */
+    --primary-blue: #2563eb;
+    /* Main brand color - use for primary buttons, links */
+    --light-blue: #60a5fa;
+    /* Lighter accent - use for hover states, highlights */
+    --dark-blue: #1d4ed8;
+    /* Darker accent - use for active states, emphasis */
+    --pale-blue: #dbeafe;
+    /* Very light - use for backgrounds, subtle highlights */
+    --text-dark: #1e293b;
+    /* Dark text - use for headings, important text */
+
+    /* EXTENDED BLUE PALETTE - For comprehensive theming */
+    --blue-50: #eff6ff;
+    /* Lightest blue - card backgrounds, subtle areas */
+    --blue-100: #dbeafe;
+    /* Light blue - hover backgrounds, soft accents */
+    --blue-200: #bfdbfe;
+    /* Medium light - borders, dividers */
+    --blue-300: #93c5fd;
+    /* Medium - secondary buttons, icons */
+    --blue-400: #60a5fa;
+    /* Medium bright - interactive elements */
+    --blue-500: #3b82f6;
+    /* Standard blue - primary actions */
+    --blue-600: #2563eb;
+    /* Primary brand - main buttons, links */
+    --blue-700: #1d4ed8;
+    /* Dark blue - active states, emphasis */
+    --blue-800: #1e40af;
+    /* Darker - text on light backgrounds */
+    --blue-900: #1e3a8a;
+    /* Darkest - high contrast text */
+
+    /* NEUTRAL GRAYS - Professional text and background colors */
+    --gray-50: #f8fafc;
+    /* Lightest - page backgrounds */
+    --gray-100: #f1f5f9;
+    /* Very light - card backgrounds */
+    --gray-200: #e2e8f0;
+    /* Light - borders, dividers */
+    --gray-300: #cbd5e1;
+    /* Medium light - disabled states */
+    --gray-400: #94a3b8;
+    /* Medium - placeholder text */
+    --gray-500: #64748b;
+    /* Medium dark - secondary text */
+    --gray-600: #475569;
+    /* Dark - body text */
+    --gray-700: #334155;
+    /* Darker - headings */
+    --gray-800: #1e293b;
+    /* Very dark - important text */
+    --gray-900: #0f172a;
+    /* Darkest - high contrast */
+
+    /* STATUS COLORS - For alerts, notifications, and feedback */
+    --success-50: #f0fdf4;
+    /* Success background */
+    --success-500: #22c55e;
+    /* Success primary */
+    --success-600: #16a34a;
+    /* Success dark */
+    --success-700: #15803d;
+    /* Success darker */
+
+    --error-50: #fef2f2;
+    /* Error background */
+    --error-500: #ef4444;
+    /* Error primary */
+    --error-600: #dc2626;
+    /* Error dark */
+    --error-700: #b91c1c;
+    /* Error darker */
+
+    --warning-50: #fffbeb;
+    /* Warning background */
+    --warning-500: #f59e0b;
+    /* Warning primary */
+    --warning-600: #d97706;
+    /* Warning dark */
+    --warning-700: #b45309;
+    /* Warning darker */
+
+    /* ACCENT COLORS - For variety and visual interest */
+    --accent-purple: #8b5cf6;
+    /* Purple accent */
+    --accent-teal: #14b8a6;
+    /* Teal accent */
+    --accent-indigo: #6366f1;
+    /* Indigo accent */
+
+    /* PARAGRAPH TEXT COLORS - Blue-black mix for professional readability */
+    --text-paragraph: #1a2332;
+    /* Primary paragraph text - blue-black mix */
+    --text-paragraph-light: #2d3748;
+    /* Lighter paragraph text - softer blue-black */
+    --text-secondary: #4a5568;
+    /* Secondary text - muted blue-gray */
+    --text-muted: #718096;
+    /* Muted text - light blue-gray */
+
+    /* Typography */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+    /* Border Radius */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+}
+
+/* 🎨 BODY STYLING - Premium SaaS Background with Ice-Cold Aesthetics */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-dark);
+    /* 🌊 Ice-cold gradient background - creates depth and premium feel */
+    background: linear-gradient(135deg,
+            var(--blue-50) 0%,
+            /* Start with lightest blue */
+            var(--gray-50) 15%,
+            /* Transition to light gray */
+            var(--pale-blue) 30%,
+            /* Add pale blue accent */
+            var(--gray-100) 45%,
+            /* Light gray for contrast */
+            var(--blue-100) 60%,
+            /* Light blue highlight */
+            var(--gray-50) 75%,
+            /* Back to light gray */
+            var(--blue-50) 90%,
+            /* End with blue tint */
+            #ffffff 100%
+            /* Pure white finish */
+        );
+    background-attachment: fixed;
+    /* Keeps background fixed during scroll */
+    min-height: 100vh;
+    /* Ensures full viewport height */
+    font-size: var(--font-size-base);
+
+    /* 🧊 Ice effect overlay - adds subtle texture */
+    position: relative;
+}
+
+/* ❄️ Ice crystal effect overlay - adds premium texture */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        /* Multiple radial gradients create ice crystal effect */
+        radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(96, 165, 250, 0.02) 0%, transparent 50%),
+        radial-gradient(circle at 40% 70%, rgba(219, 234, 254, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 90% 80%, rgba(37, 99, 235, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+    /* Allows clicks to pass through */
+    z-index: -1;
+    /* Places behind all content */
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+.section {
+    padding: var(--space-20) 0;
+}
+
+/* 🧭 NAVIGATION - Premium Glass Morphism Design */
+.navbar {
+    /* 🌟 Glass morphism effect with ice-cold blue tinting */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            /* Semi-transparent white */
+            rgba(239, 246, 255, 0.9) 25%,
+            /* Light blue tint */
+            rgba(255, 255, 255, 0.98) 50%,
+            /* Almost opaque white */
+            rgba(219, 234, 254, 0.85) 75%,
+            /* Pale blue accent */
+            rgba(255, 255, 255, 0.95) 100%
+            /* Semi-transparent white */
+        );
+
+    /* 🎨 Professional styling */
+    border-bottom: 1px solid rgba(37, 99, 235, 0.08);
+    /* Subtle blue border */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    /* 🧊 Advanced glass effects */
+    backdrop-filter: blur(20px) saturate(180%);
+    /* Strong blur with saturation */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    /* Safari support */
+
+    /* 💎 Premium shadow with blue tinting */
+    box-shadow:
+        0 1px 3px 0 rgba(37, 99, 235, 0.08),
+        /* Top shadow with blue */
+        0 1px 2px 0 rgba(96, 165, 250, 0.04),
+        /* Secondary shadow */
+        0 8px 32px 0 rgba(37, 99, 235, 0.02);
+    /* Large ambient shadow */
+
+    /* 🎯 Smooth transitions for interactions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ✨ Navbar hover effect - adds subtle glow */
+.navbar:hover {
+    box-shadow:
+        0 1px 3px 0 rgba(37, 99, 235, 0.12),
+        0 1px 2px 0 rgba(96, 165, 250, 0.06),
+        0 8px 32px 0 rgba(37, 99, 235, 0.04);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+/* 🏷️ BRAND LOGO - Premium brand styling with ice effects */
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+
+    /* 🎨 Gradient text effect for premium look */
+    background: linear-gradient(135deg,
+            var(--primary-blue) 0%,
+            /* Primary brand color */
+            var(--dark-blue) 50%,
+            /* Darker accent */
+            var(--primary-blue) 100%
+            /* Back to primary */
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* 🎯 Smooth transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* ✨ Brand hover effect - adds glow and scale */
+.nav-brand:hover {
+    transform: scale(1.05);
+    /* Subtle scale increase */
+
+    /* 🌟 Glowing text effect on hover */
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
+
+    /* 🎨 Enhanced gradient on hover */
+    background: linear-gradient(135deg,
+            var(--light-blue) 0%,
+            var(--primary-blue) 50%,
+            var(--dark-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.brand-icon {
+    font-size: var(--font-size-2xl);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--gray-600);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-600);
+}
+
+/* 🚀 HERO SECTION - Premium landing area with ice-cold aesthetics */
+.hero {
+    /* 🌊 Complex gradient background for depth and visual interest */
+    background: linear-gradient(135deg,
+            var(--blue-50) 0%,
+            /* Light blue start */
+            rgba(255, 255, 255, 0.9) 15%,
+            /* White transition */
+            var(--pale-blue) 30%,
+            /* Pale blue accent */
+            rgba(248, 250, 252, 0.8) 45%,
+            /* Light gray */
+            var(--blue-100) 60%,
+            /* Light blue highlight */
+            rgba(255, 255, 255, 0.95) 75%,
+            /* White accent */
+            var(--blue-50) 90%,
+            /* Light blue return */
+            #ffffff 100%
+            /* Pure white finish */
+        );
+
+    padding: var(--space-20) 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    /* Prevents overflow from effects */
+}
+
+/* ❄️ Hero ice crystal overlay - creates premium depth effect */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* 🔮 Multiple radial gradients create ice crystal patterns */
+    background:
+        /* Large ice crystal at top-left */
+        radial-gradient(circle at 25% 15%,
+            rgba(37, 99, 235, 0.08) 0%,
+            rgba(96, 165, 250, 0.04) 30%,
+            transparent 60%),
+
+        /* Medium ice crystal at bottom-right */
+        radial-gradient(circle at 75% 85%,
+            rgba(96, 165, 250, 0.06) 0%,
+            rgba(219, 234, 254, 0.08) 25%,
+            transparent 55%),
+
+        /* Small ice crystal at center */
+        radial-gradient(circle at 50% 40%,
+            rgba(219, 234, 254, 0.05) 0%,
+            rgba(37, 99, 235, 0.02) 40%,
+            transparent 70%),
+
+        /* Ambient glow effect */
+        radial-gradient(ellipse at 60% 20%,
+            rgba(96, 165, 250, 0.03) 0%,
+            transparent 80%);
+
+    pointer-events: none;
+    /* Allows clicks to pass through */
+    animation: float 20s ease-in-out infinite;
+    /* Subtle floating animation */
+}
+
+/* 🌟 Floating animation for ice crystals */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotate(0.5deg);
+    }
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: center;
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+    color: var(--gray-900);
+}
+
+.highlight {
+    color: var(--primary-600);
+    position: relative;
+}
+
+/* 📝 Hero description with blue-black mix for professional appeal */
+.hero-description {
+    font-size: var(--font-size-lg);
+    color: var(--text-paragraph);
+    /* Blue-black mix for better readability */
+    margin-bottom: var(--space-8);
+    line-height: 1.7;
+
+    /* 🎨 Add subtle blue tint for premium feel */
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.05);
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+}
+
+/* 💎 FEATURE CARDS - Premium glass morphism cards with ice effects */
+.feature-card {
+    /* 🧊 Glass morphism background with ice-cold tinting */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.9) 0%,
+            /* Semi-transparent white */
+            rgba(239, 246, 255, 0.7) 25%,
+            /* Light blue tint */
+            rgba(255, 255, 255, 0.95) 50%,
+            /* Almost opaque white */
+            rgba(219, 234, 254, 0.6) 75%,
+            /* Pale blue accent */
+            rgba(255, 255, 255, 0.9) 100%
+            /* Semi-transparent white */
+        );
+
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+
+    /* 💫 Premium shadow system with blue tinting */
+    box-shadow:
+        0 4px 6px -1px rgba(37, 99, 235, 0.08),
+        /* Primary shadow */
+        0 2px 4px -1px rgba(96, 165, 250, 0.04),
+        /* Secondary shadow */
+        0 10px 15px -3px rgba(37, 99, 235, 0.03),
+        /* Ambient shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    /* Inner highlight */
+
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Smooth easing */
+
+    /* 🎨 Subtle border with blue tinting */
+    border: 1px solid rgba(37, 99, 235, 0.08);
+    position: relative;
+    overflow: hidden;
+
+    /* 🌟 Advanced glass effects */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* ✨ Animated top border - appears on hover */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+
+    /* 🌈 Gradient border with blue theme */
+    background: linear-gradient(90deg,
+            var(--primary-blue) 0%,
+            /* Primary blue */
+            var(--light-blue) 50%,
+            /* Light blue */
+            var(--primary-blue) 100%
+            /* Back to primary */
+        );
+
+    transform: scaleX(0);
+    /* Hidden by default */
+    transform-origin: left;
+    /* Animates from left */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 🚀 Card hover effects - premium interactions */
+.feature-card:hover {
+    /* 🎯 Lift effect */
+    transform: translateY(-8px) scale(1.02);
+
+    /* 💎 Enhanced shadows on hover */
+    box-shadow:
+        0 20px 25px -5px rgba(37, 99, 235, 0.12),
+        /* Large shadow */
+        0 10px 10px -5px rgba(96, 165, 250, 0.08),
+        /* Medium shadow */
+        0 4px 6px -1px rgba(37, 99, 235, 0.1),
+        /* Close shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    /* Inner glow */
+
+    /* 🎨 Enhanced border color */
+    border-color: rgba(37, 99, 235, 0.2);
+
+    /* 🧊 Brighter background on hover */
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(239, 246, 255, 0.8) 25%,
+            rgba(255, 255, 255, 0.98) 50%,
+            rgba(219, 234, 254, 0.7) 75%,
+            rgba(255, 255, 255, 0.95) 100%);
+}
+
+/* ✨ Show animated border on hover */
+.feature-card:hover::before {
+    transform: scaleX(1);
+    /* Reveal the border */
+}
+
+/* 🌟 Add subtle glow effect to hovered cards */
+.feature-card:hover {
+    filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.1));
+}
+
+.feature-icon {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-500);
+    margin-bottom: var(--space-3);
+}
+
+.feature-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--gray-800);
+}
+
+/* 💎 Feature card paragraphs with blue-black mix */
+.feature-card p {
+    color: var(--text-paragraph);
+    /* Blue-black mix for feature descriptions */
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+
+    /* 🌟 Subtle blue enhancement for premium feel */
+    text-shadow: 0 1px 1px rgba(37, 99, 235, 0.04);
+}
+
+/* ===== FEATURES SECTION ===== */
+.features {
+    padding: var(--space-20) 0;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(240, 249, 255, 0.8) 25%,
+            rgba(224, 242, 254, 0.6) 50%,
+            rgba(240, 249, 255, 0.8) 75%,
+            rgba(255, 255, 255, 0.95) 100%);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--gray-900);
+}
+
+/* 📋 Section descriptions with blue-black mix */
+.section-description {
+    font-size: var(--font-size-lg);
+    color: var(--text-paragraph-light);
+    /* Softer blue-black for descriptions */
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    /* 🎨 Subtle blue enhancement */
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.03);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
+}
+
+.feature-item {
+    text-align: center;
+    padding: var(--space-6);
+}
+
+.feature-icon-wrapper {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-50) 100%);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    border: 2px solid var(--primary-200);
+    transition: all 0.3s ease;
+}
+
+.feature-icon-wrapper i {
+    font-size: var(--font-size-xl);
+    color: var(--primary-600);
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon-wrapper {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    border-color: var(--primary-600);
+    transform: scale(1.1);
+}
+
+.feature-item:hover .feature-icon-wrapper i {
+    color: white;
+}
+
+.feature-item h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--space-3);
+    color: var(--gray-800);
+}
+
+/* 🎯 Feature item paragraphs with enhanced blue-black styling */
+.feature-item p {
+    color: var(--text-paragraph);
+    /* Blue-black mix for consistency */
+    line-height: 1.6;
+    font-weight: 400;
+
+    /* 🎨 Professional text enhancement */
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.04);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: linear-gradient(135deg,
+            var(--primary-900) 0%,
+            var(--primary-800) 25%,
+            var(--gray-900) 50%,
+            var(--primary-800) 75%,
+            var(--primary-900) 100%);
+    color: white;
+    padding: var(--space-12) 0;
+    text-align: center;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-500) 50%, transparent 100%);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 700;
+    font-size: var(--font-size-xl);
+}
+
+/* 🏢 Footer text with subtle blue-white mix */
+.footer-text {
+    color: rgba(255, 255, 255, 0.8);
+    /* White with transparency for footer */
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+}
+
+/*
+ ===== PROFESSIONAL LANDING PAGE ENHANCEMENTS ===== */
+
+/* Step Cards Styling */
+.step-card {
+    transition: all 0.3s ease;
+    border-radius: var(--radius-lg);
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+}
+
+.step-card .step-number {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    box-shadow: 0 4px 14px 0 rgba(2, 132, 199, 0.25);
+    transition: all 0.3s ease;
+}
+
+.step-card:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px 0 rgba(2, 132, 199, 0.35);
+}
+
+/* Call to Action Section Enhancements */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--primary-800) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Professional Card Styling */
+.card {
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(240, 249, 255, 0.7) 50%,
+            rgba(255, 255, 255, 0.95) 100%);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(14, 165, 233, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.15), 0 10px 10px -5px rgba(56, 189, 248, 0.08);
+    border-color: var(--primary-300);
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.98) 0%,
+            rgba(240, 249, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.98) 100%);
+}
+
+/* Professional Input Focus States */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+    background: var(--primary-50);
+}
+
+/* Professional Badge Styling */
+.badge-primary {
+    background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-50) 100%);
+    color: var(--primary-700);
+    border: 1px solid var(--primary-200);
+}
+
+.badge-success {
+    background: linear-gradient(135deg, var(--success-100) 0%, var(--success-50) 100%);
+    color: var(--success-700);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.badge-error {
+    background: linear-gradient(135deg, var(--error-100) 0%, var(--error-50) 100%);
+    color: var(--error-700);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Professional Alert Styling */
+.alert-success {
+    background: linear-gradient(135deg, var(--success-50) 0%, rgba(240, 253, 244, 0.8) 100%);
+    color: var(--success-700);
+    border: 1px solid var(--success-200);
+    border-left: 4px solid var(--success-500);
+}
+
+.alert-error {
+    background: linear-gradient(135deg, var(--error-50) 0%, rgba(254, 242, 242, 0.8) 100%);
+    color: var(--error-700);
+    border: 1px solid var(--error-200);
+    border-left: 4px solid var(--error-500);
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, var(--warning-50) 0%, rgba(255, 251, 235, 0.8) 100%);
+    color: var(--warning-700);
+    border: 1px solid var(--warning-200);
+    border-left: 4px solid var(--warning-500);
+}
+
+/* Professional Table Styling */
+.table-container {
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(240, 249, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.95) 100%);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.1), 0 2px 4px -1px rgba(56, 189, 248, 0.06);
+    border: 1px solid rgba(14, 165, 233, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.table th {
+    background: linear-gradient(135deg, var(--primary-50) 0%, rgba(224, 242, 254, 0.8) 100%);
+    color: var(--primary-800);
+    border-bottom: 2px solid var(--primary-200);
+}
+
+.table tbody tr:hover {
+    background: linear-gradient(135deg, var(--primary-100) 0%, rgba(186, 230, 253, 0.6) 100%);
+}
+
+/* Professional Loading Spinner */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray-200);
+    border-top: 2px solid var(--primary-500);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Professional Modal Styling */
+.modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--gray-100);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+/* Professional Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--accent-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Professional Glass Effect */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* 🌟
+ PREMIUM HERO ENHANCEMENTS - Advanced ice-cold effects */
+
+/* 💎 Hero title with premium typography */
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+    color: var(--text-dark);
+
+    /* 🎨 Add subtle text shadow for depth */
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+}
+
+/* 🌈 Gradient text effect for highlight words */
+.gradient-text {
+    background: linear-gradient(135deg,
+            var(--primary-blue) 0%,
+            var(--light-blue) 50%,
+            var(--primary-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* ✨ Add glow effect */
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
+
+    /* 🎯 Smooth animation */
+    animation: gradient-shift 3s ease-in-out infinite;
+}
+
+/* 🌊 Gradient animation for text */
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 50%, var(--primary-blue) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    50% {
+        background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 50%, var(--dark-blue) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+/* 📱 Trust indicators styling */
+.trust-indicators {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+.trust-item {
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover {
+    transform: translateY(-2px);
+    color: var(--primary-blue) !important;
+}
+
+/* 🎬 Fade in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🎨 PREMIUM FEATURE ICON STYLING */
+.feature-icon {
+    font-size: var(--font-size-2xl);
+    color: var(--primary-blue);
+    margin-bottom: var(--space-3);
+
+    /* 🌟 Add glow effect */
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.2));
+
+    /* ✨ Smooth transitions */
+    transition: all 0.3s ease;
+}
+
+/* 🚀 Icon hover effects */
+.feature-card:hover .feature-icon {
+    color: var(--light-blue);
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 12px rgba(96, 165, 250, 0.4));
+}
+
+/* 💫 ADVANCED GLASS MORPHISM UTILITIES */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 8px 32px 0 rgba(37, 99, 235, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* 🧊 Ice crystal pattern overlay */
+.ice-pattern {
+    position: relative;
+}
+
+.ice-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(96, 165, 250, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* 🌟 Premium hover effects for interactive elements */
+.premium-hover {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-hover:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow:
+        0 20px 40px -12px rgba(37, 99, 235, 0.15),
+        0 8px 16px -4px rgba(96, 165, 250, 0.1);
+}
+
+/* 💎 Premium text effects */
+.premium-text {
+    background: linear-gradient(135deg, var(--text-dark) 0%, var(--primary-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 🎯 Focus states for accessibility */
+.btn:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    box-shadow:
+        0 0 0 4px rgba(37, 99, 235, 0.1),
+        0 8px 25px 0 rgba(37, 99, 235, 0.25);
+}
+
+/* 📱 Mobile optimizations */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .trust-indicators {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .feature-card {
+        margin-bottom: var(--space-4);
+    }
+}
+
+/* 📝 GLOBA
+L PARAGRAPH STYLING - Blue-black mix for professional readability */
+
+/* 🎨 Base paragraph styling with blue-black mix */
+p {
+    color: var(--text-paragraph);
+    /* Primary blue-black mix */
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+
+    /* 🌟 Subtle blue enhancement for premium feel */
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.03);
+}
+
+/* 📋 Secondary paragraph styling for less important content */
+p.text-secondary {
+    color: var(--text-secondary);
+    /* Muted blue-gray */
+    font-size: var(--font-size-sm);
+}
+
+/* 🔍 Muted paragraph styling for captions and fine print */
+p.text-muted {
+    color: var(--text-muted);
+    /* Light blue-gray */
+    font-size: var(--font-size-xs);
+}
+
+/* 💼 Professional paragraph styling for business content */
+p.text-professional {
+    color: var(--text-paragraph-light);
+    /* Softer blue-black */
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    /* Slight letter spacing for readability */
+}
+
+/* 🎯 Trust indicator text styling */
+.trust-item span {
+    color: var(--text-paragraph) !important;
+    font-weight: 500;
+}
+
+/* 📊 Feature stats text styling */
+.feature-stats {
+    color: var(--primary-blue) !important;
+    font-weight: 600;
+}
+
+/* 🏢 Trust logo text styling */
+.trust-logo {
+    color: var(--text-secondary) !important;
+    font-weight: 600;
+}
+
+/* 📱 Form label styling with blue-black mix */
+.form-label {
+    color: var(--text-paragraph);
+    font-weight: 500;
+}
+
+/* 🎨 Card description styling */
+.card-description {
+    color: var(--text-paragraph-light);
+    line-height: 1.5;
+}
+
+/* 📋 List item styling */
+li {
+    color: var(--text-paragraph);
+    line-height: 1.6;
+}
+
+/* 🔗 Link styling with blue theme */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--dark-blue);
+    text-decoration: underline;
+}
+
+/* 📝 Small text styling */
+small {
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+}
+
+/* 🎯 Caption styling */
+.caption {
+    color: var(--text-muted);
+    font-size: var(--font-size-xs);
+    font-style: italic;
+}
+
+/* 💡 Highlight text styling */
+.highlight-text {
+    color: var(--primary-blue);
+    font-weight: 600;
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, 0.1) 0%,
+            rgba(96, 165, 250, 0.05) 100%);
+    padding: 0 var(--space-1);
+    border-radius: var(--radius-sm);
+}
+
+/* 🌟 Premium text effects for special content */
+.premium-paragraph {
+    color: var(--text-paragraph);
+    font-size: var(--font-size-lg);
+    line-height: 1.7;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+
+    /* 🎨 Enhanced blue shadow for premium feel */
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.06);
+}
+
+/* 📖 Quote styling with blue accents */
+blockquote {
+    color: var(--text-paragraph-light);
+    font-style: italic;
+    border-left: 4px solid var(--primary-blue);
+    padding-left: var(--space-4);
+    margin: var(--space-6) 0;
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, 0.02) 0%,
+            transparent 100%);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+}
+
+/* 🎨 Code styling with blue theme */
+code {
+    color: var(--primary-blue);
+    background: rgba(37, 99, 235, 0.1);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9em;
+}
+
+/* 🌊 B
+LUISH ANIMATIONS - Premium ice-cold animation system */
+
+/* ❄️ FLOATING ICE CRYSTALS - Background ambient animation */
+@keyframes floatingIceCrystals {
+    0% {
+        transform: translateY(0px) translateX(0px) rotate(0deg);
+        opacity: 0.3;
+    }
+
+    25% {
+        transform: translateY(-15px) translateX(5px) rotate(90deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-8px) translateX(-3px) rotate(180deg);
+        opacity: 0.4;
+    }
+
+    75% {
+        transform: translateY(-20px) translateX(8px) rotate(270deg);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(0px) translateX(0px) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* 🌟 BLUE GLOW PULSE - For interactive elements */
+@keyframes blueGlowPulse {
+    0% {
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(96, 165, 250, 0.6), 0 0 30px rgba(37, 99, 235, 0.4);
+        transform: scale(1.02);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+        transform: scale(1);
+    }
+}
+
+/* 💫 BLUE SHIMMER - For premium elements */
+@keyframes blueShimmer {
+    0% {
+        background-position: -200% center;
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        background-position: 200% center;
+        opacity: 0.8;
+    }
+}
+
+/* 🌊 WAVE ANIMATION - For flowing effects */
+@keyframes blueWave {
+    0% {
+        transform: translateX(-100%) skewX(-15deg);
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(37, 99, 235, 0.1) 50%,
+                transparent 100%);
+    }
+
+    50% {
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(96, 165, 250, 0.2) 50%,
+                transparent 100%);
+    }
+
+    100% {
+        transform: translateX(100%) skewX(-15deg);
+        background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(37, 99, 235, 0.1) 50%,
+                transparent 100%);
+    }
+}
+
+/* ❄️ ICE CRYSTAL FORMATION - For loading states */
+@keyframes iceCrystalForm {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+    25% {
+        transform: scale(0.3) rotate(90deg);
+        opacity: 0.4;
+        border-radius: 30%;
+    }
+
+    50% {
+        transform: scale(0.7) rotate(180deg);
+        opacity: 0.8;
+        border-radius: 15%;
+    }
+
+    75% {
+        transform: scale(0.9) rotate(270deg);
+        opacity: 0.9;
+        border-radius: 8%;
+    }
+
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 1;
+        border-radius: var(--radius-lg);
+    }
+}
+
+/* 🌟 BLUE GRADIENT SHIFT - For text and backgrounds */
+@keyframes blueGradientShift {
+    0% {
+        background: linear-gradient(135deg,
+                var(--primary-blue) 0%,
+                var(--light-blue) 50%,
+                var(--primary-blue) 100%);
+    }
+
+    25% {
+        background: linear-gradient(135deg,
+                var(--light-blue) 0%,
+                var(--primary-blue) 50%,
+                var(--dark-blue) 100%);
+    }
+
+    50% {
+        background: linear-gradient(135deg,
+                var(--dark-blue) 0%,
+                var(--primary-blue) 50%,
+                var(--light-blue) 100%);
+    }
+
+    75% {
+        background: linear-gradient(135deg,
+                var(--primary-blue) 0%,
+                var(--dark-blue) 50%,
+                var(--primary-blue) 100%);
+    }
+
+    100% {
+        background: linear-gradient(135deg,
+                var(--primary-blue) 0%,
+                var(--light-blue) 50%,
+                var(--primary-blue) 100%);
+    }
+}
+
+/* 💎 BLUE RIPPLE EFFECT - For click interactions */
+@keyframes blueRipple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+        background: radial-gradient(circle,
+                rgba(37, 99, 235, 0.6) 0%,
+                rgba(96, 165, 250, 0.4) 50%,
+                transparent 100%);
+    }
+
+    50% {
+        opacity: 0.8;
+        background: radial-gradient(circle,
+                rgba(96, 165, 250, 0.4) 0%,
+                rgba(37, 99, 235, 0.2) 50%,
+                transparent 100%);
+    }
+
+    100% {
+        transform: scale(4);
+        opacity: 0;
+        background: radial-gradient(circle,
+                transparent 0%,
+                transparent 50%,
+                transparent 100%);
+    }
+}
+
+/* 🧊 FROST FORMATION - For glass morphism elements */
+@keyframes frostFormation {
+    0% {
+        backdrop-filter: blur(0px) saturate(100%);
+        background: rgba(255, 255, 255, 0);
+        border: 1px solid rgba(37, 99, 235, 0);
+    }
+
+    50% {
+        backdrop-filter: blur(10px) saturate(150%);
+        background: rgba(239, 246, 255, 0.3);
+        border: 1px solid rgba(37, 99, 235, 0.1);
+    }
+
+    100% {
+        backdrop-filter: blur(20px) saturate(180%);
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(37, 99, 235, 0.15);
+    }
+}
+
+/* 🌊 BLUE BREATHING - For subtle alive effects */
+@keyframes blueBreathing {
+    0% {
+        transform: scale(1);
+        filter: brightness(1) saturate(1);
+    }
+
+    50% {
+        transform: scale(1.01);
+        filter: brightness(1.05) saturate(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: brightness(1) saturate(1);
+    }
+}
+
+/* ❄️ SNOWFALL EFFECT - For background ambiance */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100vh) translateX(0px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* 🌟 BLUE SPARKLE - For magical effects */
+@keyframes blueSparkle {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 0;
+        background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+    }
+
+    25% {
+        transform: scale(0.5) rotate(90deg);
+        opacity: 0.8;
+        background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
+    }
+
+    50% {
+        transform: scale(1) rotate(180deg);
+        opacity: 1;
+        background: radial-gradient(circle, var(--light-blue) 0%, transparent 70%);
+    }
+
+    75% {
+        transform: scale(0.7) rotate(270deg);
+        opacity: 0.6;
+        background: radial-gradient(circle, var(--primary-blue) 0%, transparent 70%);
+    }
+
+    100% {
+        transform: scale(0) rotate(360deg);
+        opacity: 0;
+        background: radial-gradient(circle, transparent 0%, transparent 70%);
+    }
+}
+
+/* 💫 APPLYING ANIMATIONS TO ELEMENTS */
+
+/* 🎨 Hero section with floating ice crystals */
+.hero::before {
+    animation: floatingIceCrystals 20s ease-in-out infinite;
+}
+
+/* Static gradient text for non-animated elements */
+.gradient-text {
+    background: linear-gradient(135deg,
+            var(--primary-blue) 0%,
+            var(--light-blue) 50%,
+            var(--primary-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Static appearance - no animation */
+    filter: drop-shadow(0 0 8px rgba(37, 99, 235, 0.3));
+}
+
+/* 💎 Feature cards with ice crystal formation on load */
+.feature-card {
+    animation: iceCrystalForm 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation-delay: calc(var(--animation-delay, 0) * 0.1s);
+}
+
+/* 🧊 Glass morphism elements with frost formation */
+.glass-card {
+    animation: frostFormation 1s ease-out forwards;
+}
+
+/* 🌊 Buttons with blue glow pulse on hover */
+.btn-primary:hover {
+    animation: blueGlowPulse 2s ease-in-out infinite;
+}
+
+/* ❄️ Navigation with subtle breathing effect */
+.navbar {
+    animation: blueBreathing 6s ease-in-out infinite;
+}
+
+/* 🌟 Feature icons with sparkle effect on hover */
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    animation: blueSparkle 1.5s ease-in-out;
+}
+
+/* 💫 Trust indicators with wave animation */
+.trust-indicators {
+    position: relative;
+    overflow: hidden;
+}
+
+.trust-indicators::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(37, 99, 235, 0.1) 50%, transparent 100%);
+    animation: blueWave 3s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+/* 🎯 Loading spinner with blue theme */
+.loading-spinner {
+    border: 3px solid rgba(37, 99, 235, 0.1);
+    border-top: 3px solid var(--primary-blue);
+    animation: spin 1s linear infinite, blueGlowPulse 2s ease-in-out infinite;
+}
+
+/* 🌊 Form inputs with blue focus animation */
+.form-input:focus {
+    animation: blueGlowPulse 0.5s ease-out;
+}
+
+/* ❄️ Cards with subtle breathing */
+.card {
+    animation: blueBreathing 8s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* 🌟 Brand logo with shimmer effect */
+.nav-brand {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-brand::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(96, 165, 250, 0.3) 50%,
+            transparent 100%);
+    background-size: 200% 100%;
+    animation: blueShimmer 3s ease-in-out infinite;
+    animation-delay: 3s;
+    pointer-events: none;
+}
+
+/* 💎 ANIMATION UTILITIES - For students to use */
+
+/* 🎨 Animation delay utilities */
+.animate-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.animate-delay-3 {
+    animation-delay: 0.3s;
+}
+
+.animate-delay-4 {
+    animation-delay: 0.4s;
+}
+
+.animate-delay-5 {
+    animation-delay: 0.5s;
+}
+
+/* 🌊 Blue animation classes for reuse */
+.blue-glow {
+    animation: blueGlowPulse 2s ease-in-out infinite;
+}
+
+.blue-shimmer {
+    animation: blueShimmer 3s ease-in-out infinite;
+}
+
+.blue-breathing {
+    animation: blueBreathing 6s ease-in-out infinite;
+}
+
+.ice-crystal {
+    animation: iceCrystalForm 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.frost-form {
+    animation: frostFormation 1s ease-out forwards;
+}
+
+/* ❄️ Hover animation classes */
+.hover-blue-glow:hover {
+    animation: blueGlowPulse 1s ease-in-out;
+}
+
+.hover-sparkle:hover {
+    animation: blueSparkle 1.5s ease-in-out;
+}
+
+.hover-ripple:hover {
+    animation: blueRipple 0.6s ease-out;
+}
+
+/* 🌟 PERFORMANCE OPTIMIZATIONS */
+.animated-element {
+    will-change: transform, opacity, filter;
+    transform: translateZ(0);
+    /* Force GPU acceleration */
+}
+
+/* 🎯 Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero::before,
+    .gradient-text,
+    .navbar,
+    .card {
+        animation: none !important;
+    }
+}
+
+/* 📱 Mobile animation optimizations */
+@media (max-width: 768px) {
+    .feature-card {
+        animation-duration: 0.6s;
+    }
+
+    .blue-glow,
+    .blue-shimmer,
+    .blue-breathing {
+        animation-duration: 3s;
+    }
+}
+
+/* 🌊 BL
+UE FAMILY HOVER SYSTEM - Cool blue variations instead of white */
+
+/* 💎 COMPREHENSIVE BLUE HOVER EFFECTS */
+
+/* 🎨 Navigation Links - Blue family hover progression */
+.nav-link {
+    color: var(--text-paragraph);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--light-blue));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue);
+    transform: translateY(-2px);
+    text-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+/* 🌟 Feature Card Enhanced Blue Hover */
+.feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.95) 0%,
+            /* Light blue tint */
+            rgba(219, 234, 254, 0.9) 25%,
+            /* Pale blue */
+            rgba(186, 230, 253, 0.85) 50%,
+            /* Medium light blue */
+            rgba(219, 234, 254, 0.9) 75%,
+            /* Pale blue */
+            rgba(239, 246, 255, 0.95) 100%
+            /* Light blue tint */
+        );
+
+    box-shadow:
+        0 20px 40px -12px rgba(37, 99, 235, 0.25),
+        0 8px 16px -4px rgba(96, 165, 250, 0.15),
+        0 0 0 1px rgba(37, 99, 235, 0.1),
+        inset 0 1px 0 rgba(96, 165, 250, 0.2);
+
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+/* 💫 Feature Icon Wrapper Blue Hover */
+.feature-item:hover .feature-icon-wrapper {
+    background: linear-gradient(135deg,
+            var(--primary-blue) 0%,
+            var(--light-blue) 50%,
+            var(--primary-blue) 100%);
+    border-color: var(--light-blue);
+    transform: scale(1.15) rotate(5deg);
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.4),
+        0 0 20px rgba(96, 165, 250, 0.3);
+}
+
+.feature-item:hover .feature-icon-wrapper i {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* 🧊 Card Blue Hover System */
+.card:hover {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.98) 0%,
+            rgba(219, 234, 254, 0.95) 25%,
+            rgba(186, 230, 253, 0.9) 50%,
+            rgba(219, 234, 254, 0.95) 75%,
+            rgba(239, 246, 255, 0.98) 100%);
+
+    border-color: rgba(37, 99, 235, 0.25);
+    box-shadow:
+        0 25px 50px -12px rgba(37, 99, 235, 0.2),
+        0 10px 20px -5px rgba(96, 165, 250, 0.15),
+        inset 0 1px 0 rgba(96, 165, 250, 0.3);
+
+    transform: translateY(-4px) scale(1.01);
+}
+
+/* 🎯 Table Row Blue Hover */
+.table tbody tr:hover {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.8) 0%,
+            rgba(219, 234, 254, 0.6) 50%,
+            rgba(239, 246, 255, 0.8) 100%);
+
+    box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.1);
+    transform: scale(1.005);
+}
+
+/* 🌊 Form Input Blue Focus/Hover */
+.form-input:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0.9) 100%);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.form-input:focus {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.8) 0%,
+            rgba(219, 234, 254, 0.6) 50%,
+            rgba(239, 246, 255, 0.8) 100%);
+    border-color: var(--primary-blue);
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.15),
+        0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+/* 💎 Trust Item Blue Hover */
+.trust-item:hover {
+    color: var(--primary-blue) !important;
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.6) 0%,
+            rgba(219, 234, 254, 0.4) 100%);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* 🌟 Feature Badge Blue Hover */
+.badge:hover {
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, 0.15) 0%,
+            rgba(96, 165, 250, 0.1) 100%) !important;
+    color: var(--primary-blue) !important;
+    border-color: rgba(37, 99, 235, 0.3) !important;
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* 🧊 Glass Card Blue Hover */
+.glass-card:hover {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.4) 0%,
+            rgba(219, 234, 254, 0.3) 50%,
+            rgba(239, 246, 255, 0.4) 100%);
+    border-color: rgba(37, 99, 235, 0.2);
+    backdrop-filter: blur(25px) saturate(200%);
+    box-shadow:
+        0 8px 32px rgba(37, 99, 235, 0.15),
+        inset 0 1px 0 rgba(96, 165, 250, 0.3);
+}
+
+/* 🎨 Step Card Blue Hover */
+.step-card:hover {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.3) 0%,
+            rgba(219, 234, 254, 0.2) 100%);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+    transform: translateY(-6px) scale(1.02);
+}
+
+.step-card:hover .step-number {
+    background: linear-gradient(135deg,
+            var(--light-blue) 0%,
+            var(--primary-blue) 50%,
+            var(--dark-blue) 100%);
+    box-shadow:
+        0 8px 25px rgba(37, 99, 235, 0.4),
+        0 0 20px rgba(96, 165, 250, 0.3);
+    transform: scale(1.15) rotate(5deg);
+}
+
+/* 💫 Trust Logo Blue Hover */
+.trust-logo:hover {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.8) 0%,
+            rgba(219, 234, 254, 0.6) 100%);
+    color: var(--primary-blue) !important;
+    border-color: rgba(37, 99, 235, 0.2);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+/* 🌊 Link Blue Hover Enhancement */
+a:hover {
+    color: var(--light-blue);
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.4);
+    transform: translateY(-1px);
+}
+
+/* 🎯 Code Element Blue Hover */
+code:hover {
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, 0.15) 0%,
+            rgba(96, 165, 250, 0.1) 100%);
+    color: var(--dark-blue);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+    transform: scale(1.02);
+}
+
+/* 💎 Blockquote Blue Hover */
+blockquote:hover {
+    border-left-color: var(--light-blue);
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, 0.05) 0%,
+            rgba(96, 165, 250, 0.03) 100%);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+    transform: translateX(5px);
+}
+
+/* 🌟 INTERACTIVE BLUE HOVER EFFECTS */
+
+/* 🧊 Navbar Blue Hover Enhancement */
+.navbar:hover {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.98) 0%,
+            rgba(255, 255, 255, 0.99) 25%,
+            rgba(219, 234, 254, 0.95) 50%,
+            rgba(255, 255, 255, 0.99) 75%,
+            rgba(239, 246, 255, 0.98) 100%);
+    box-shadow:
+        0 2px 8px rgba(37, 99, 235, 0.15),
+        0 1px 3px rgba(96, 165, 250, 0.1);
+}
+
+/* 💫 Hero Section Blue Hover (for interactive elements) */
+.hero-actions .btn:hover {
+    animation: blueGlowPulse 1.5s ease-in-out infinite;
+}
+
+/* 🎨 Feature Grid Blue Hover */
+.features-grid:hover .feature-item:not(:hover) {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+.features-grid .feature-item:hover {
+    opacity: 1;
+    transform: scale(1.02);
+    z-index: 10;
+    position: relative;
+}
+
+/* 🌊 ADVANCED BLUE HOVER ANIMATIONS */
+
+/* 💎 Blue Ripple on Click */
+.btn:active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(96, 165, 250, 0.6) 0%,
+            rgba(37, 99, 235, 0.4) 50%,
+            transparent 100%);
+    transform: translate(-50%, -50%);
+    animation: blueRipple 0.6s ease-out;
+}
+
+/* 🌟 Blue Glow Trail on Mouse Move */
+.premium-hover:hover {
+    position: relative;
+}
+
+.premium-hover:hover::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg,
+            var(--primary-blue),
+            var(--light-blue),
+            var(--primary-blue));
+    background-size: 200% 200%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: blueGradientShift 2s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+/* 🧊 Ice Crystal Hover Effect */
+.ice-pattern:hover::before {
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(186, 230, 253, 0.06) 0%, transparent 60%);
+    animation: floatingIceCrystals 3s ease-in-out infinite;
+}
+
+/* 💫 UTILITY HOVER CLASSES */
+
+/* 🎨 Blue hover utilities for students to use */
+.hover-blue-light:hover {
+    background: linear-gradient(135deg,
+            rgba(239, 246, 255, 0.8) 0%,
+            rgba(219, 234, 254, 0.6) 100%) !important;
+}
+
+.hover-blue-medium:hover {
+    background: linear-gradient(135deg,
+            rgba(219, 234, 254, 0.8) 0%,
+            rgba(186, 230, 253, 0.6) 100%) !important;
+}
+
+.hover-blue-strong:hover {
+    background: linear-gradient(135deg,
+            var(--primary-blue) 0%,
+            var(--light-blue) 100%) !important;
+    color: white !important;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+.hover-lift:hover {
+    transform: translateY(-4px);
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+    filter: brightness(1.1);
+}
+
+/* 🌊 RESPONSIVE BLUE HOVER ADJUSTMENTS */
+@media (max-width: 768px) {
+
+    /* Reduce hover effects on mobile for better performance */
+    .feature-card:hover,
+    .card:hover,
+    .premium-hover:hover {
+        transform: translateY(-2px) scale(1.01);
+    }
+
+    .step-card:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+
+    /* Simplify mobile hover animations */
+    .nav-link:hover,
+    .trust-item:hover,
+    .badge:hover {
+        transform: translateY(-1px);
+    }
+}
+
+/* 🎯 ACCESSIBILITY ENHANCEMENTS */
+@media (hover: hover) {
+
+    /* Only apply hover effects on devices that support hover */
+    .hover-only-on-hover:hover {
+        background: linear-gradient(135deg,
+                rgba(239, 246, 255, 0.6) 0%,
+                rgba(219, 234, 254, 0.4) 100%);
+    }
+}
+
+/* 💎 HIGH CONTRAST MODE BLUE HOVERS */
+@media (prefers-contrast: high) {
+
+    .feature-card:hover,
+    .card:hover {
+        border: 2px solid var(--primary-blue);
+        background: rgba(37, 99, 235, 0.1);
+    }
+
+    .btn-primary:hover {
+        background: var(--dark-blue);
+        border: 2px solid var(--primary-blue);
+    }
+}
+
+/* 🌟 TH
+EME-AWARE COMPONENT UPDATES */
+
+/* 🎨 Update body to use theme variables */
+body {
+    background: var(--background) !important;
+    color: var(--text-primary) !important;
+}
+
+/* 🧭 Navigation theme updates */
+.navbar {
+    background: var(--card-bg) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+.nav-brand {
+    color: var(--text-accent) !important;
+}
+
+.nav-link {
+    color: var(--text-secondary) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+/* 🚀 Hero section theme updates */
+.hero {
+    background: linear-gradient(135deg,
+            var(--background) 0%,
+            var(--background-secondary) 25%,
+            var(--background-tertiary) 50%,
+            var(--background-secondary) 75%,
+            var(--background) 100%) !important;
+}
+
+.hero-title {
+    color: var(--text-primary) !important;
+}
+
+.hero-description {
+    color: var(--text-secondary) !important;
+}
+
+/* 💎 Feature cards theme updates */
+.feature-card {
+    background: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+    color: var(--text-primary) !important;
+}
+
+.feature-card:hover {
+    background: var(--card-hover) !important;
+    border-color: var(--border-hover) !important;
+}
+
+.feature-card h3 {
+    color: var(--text-primary) !important;
+}
+
+.feature-card p {
+    color: var(--text-secondary) !important;
+}
+
+.feature-icon {
+    color: var(--primary) !important;
+}
+
+/* 🎯 Features section theme updates */
+.features {
+    background: var(--background-secondary) !important;
+}
+
+.section-title {
+    color: var(--text-primary) !important;
+}
+
+.section-description {
+    color: var(--text-secondary) !important;
+}
+
+.feature-icon-wrapper {
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--primary-light) 100%) !important;
+    border-color: var(--primary) !important;
+}
+
+.feature-icon-wrapper i {
+    color: var(--primary) !important;
+}
+
+.feature-item h3 {
+    color: var(--text-primary) !important;
+}
+
+.feature-item p {
+    color: var(--text-secondary) !important;
+}
+
+/* 🏢 Footer theme updates */
+.footer {
+    background: linear-gradient(135deg,
+            var(--background-tertiary) 0%,
+            var(--card-bg) 100%) !important;
+    color: var(--text-inverse) !important;
+}
+
+.footer-text {
+    color: var(--text-muted) !important;
+}
+
+/* 🎨 Trust indicators theme updates */
+.trust-item {
+    color: var(--text-secondary) !important;
+}
+
+.trust-item:hover {
+    color: var(--primary) !important;
+    background: var(--primary-50) !important;
+}
+
+/* 🏆 Badge theme updates */
+.badge {
+    background: var(--primary-50) !important;
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+.badge:hover {
+    background: var(--primary) !important;
+    color: var(--text-inverse) !important;
+}
+
+/* 🌊 Glass card theme updates */
+.glass-card {
+    background: var(--glass-bg) !important;
+    border-color: var(--glass-border) !important;
+}
+
+.glass-card:hover {
+    background: var(--glass-hover) !important;
+}
+
+/* 📊 Table theme updates */
+.table-container {
+    background: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+}
+
+.table th {
+    background: var(--background-secondary) !important;
+    color: var(--text-primary) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+.table td {
+    color: var(--text-secondary) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+.table tbody tr:hover {
+    background: var(--card-hover) !important;
+}
+
+/* 🎯 Form theme updates */
+.form-input {
+    background: var(--card-bg) !important;
+    border-color: var(--border) !important;
+    color: var(--text-primary) !important;
+}
+
+.form-input:focus {
+    border-color: var(--border-focus) !important;
+    background: var(--card-hover) !important;
+}
+
+.form-label {
+    color: var(--text-primary) !important;
+}
+
+/* 🌟 Animation theme updates */
+.gradient-text {
+    background: linear-gradient(135deg,
+            var(--primary) 0%,
+            var(--secondary) 50%,
+            var(--primary) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* 💫 Loading spinner theme updates */
+.loading-spinner {
+    border-color: var(--border) !important;
+    border-top-color: var(--primary) !important;
+}
+
+/* 🎨 Alert theme updates */
+.alert-success {
+    background: var(--success-bg) !important;
+    color: var(--success) !important;
+    border-left-color: var(--success) !important;
+}
+
+.alert-error {
+    background: var(--error-bg) !important;
+    color: var(--error) !important;
+    border-left-color: var(--error) !important;
+}
+
+.alert-warning {
+    background: var(--warning-bg) !important;
+    color: var(--warning) !important;
+    border-left-color: var(--warning) !important;
+}
+
+/* 🔗 Link theme updates */
+a {
+    color: var(--primary) !important;
+}
+
+a:hover {
+    color: var(--primary-hover) !important;
+}
+
+/* 📝 Text theme updates */
+p {
+    color: var(--text-secondary) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* 💎 Code theme updates */
+code {
+    background: var(--primary-50) !important;
+    color: var(--primary) !important;
+}
+
+blockquote {
+    background: var(--card-hover) !important;
+    border-left-color: var(--primary) !important;
+    color: var(--text-secondary) !important;
+}
+
+/* 🌙 Dark theme specific enhancements */
+[data-theme="dark"] .hero::before {
+    opacity: 0.1 !important;
+}
+
+[data-theme="dark"] .feature-card {
+    backdrop-filter: blur(20px) saturate(180%) !important;
+}
+
+[data-theme="dark"] .glass-card {
+    backdrop-filter: blur(25px) saturate(200%) !important;
+}
+
+[data-theme="dark"] .navbar {
+    backdrop-filter: blur(25px) saturate(180%) !important;
+}
+
+/* ☀️ Light theme specific enhancements */
+[data-theme="light"] .hero::before {
+    opacity: 0.03 !important;
+}
+
+[data-theme="light"] .feature-card {
+    backdrop-filter: blur(15px) saturate(150%) !important;
+}
+
+[data-theme="light"] .glass-card {
+    backdrop-filter: blur(20px) saturate(160%) !important;
+}
+
+[data-theme="light"] .navbar {
+    backdrop-filter: blur(20px) saturate(150%) !important;
+}
+
+/* HER
+O TITLE ANIMATION SYSTEM - Educational CSS for Future Engineers */
+
+/* 
+   LEARNING OBJECTIVE: Understanding CSS animations and text effects
+   This section teaches students how to create professional text animations
+   using keyframes, transforms, and gradient backgrounds
+*/
+
+/* Base hero title styling - Foundation for all title elements */
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-6);
+    color: var(--text-dark);
+
+    /* Text shadow adds depth and professionalism */
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+
+    /* Display flex allows us to control text layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Main title text - Static, professional appearance */
+.title-main {
+    /* This text remains static for readability */
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: var(--space-2);
+}
+
+/* Animated highlight text - The "Effortlessly" word */
+.title-highlight {
+    /* Position relative allows for pseudo-element positioning */
+    position: relative;
+    display: inline-block;
+
+    /* Remove default hover effects - we want only our custom animation */
+    pointer-events: none;
+
+    /* Base color before animation */
+    color: var(--primary-blue);
+
+    /* Smooth transition for any color changes */
+    transition: none;
+}
+
+/* Animated text class - Controls the main animation */
+.animated-text {
+    /* Background gradient creates the blue effect */
+    background: linear-gradient(135deg,
+            /* Diagonal gradient direction */
+            var(--primary-blue) 0%,
+            /* Start with primary blue */
+            var(--light-blue) 50%,
+            /* Middle with light blue */
+            var(--primary-blue) 100%
+            /* End with primary blue */
+        );
+
+    /* These properties make the gradient show as text color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Background size larger than element for animation effect */
+    background-size: 200% 200%;
+
+    /* Apply the animation */
+    animation: textGradientShift 3s ease-in-out infinite;
+}
+
+/* 
+   KEYFRAME ANIMATION: textGradientShift
+   This creates a smooth color transition effect
+   Students learn: How keyframes work, percentage-based timing, gradient positioning
+*/
+@keyframes textGradientShift {
+
+    /* Animation start - gradient positioned left */
+    0% {
+        background-position: 0% 50%;
+        /* Start with primary blue dominant */
+        background: linear-gradient(135deg,
+                var(--primary-blue) 0%,
+                var(--light-blue) 50%,
+                var(--primary-blue) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    /* Animation middle - gradient positioned center */
+    50% {
+        background-position: 100% 50%;
+        /* Peak with light blue dominant */
+        background: linear-gradient(135deg,
+                var(--light-blue) 0%,
+                var(--primary-blue) 50%,
+                var(--dark-blue) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+
+    /* Animation end - return to start position */
+    100% {
+        background-position: 0% 50%;
+        /* Return to primary blue dominant */
+        background: linear-gradient(135deg,
+                var(--primary-blue) 0%,
+                var(--light-blue) 50%,
+                var(--primary-blue) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+/* 
+   ACCESSIBILITY CONSIDERATIONS
+   Students learn: How to respect user preferences for motion
+   This is crucial for professional web development
+*/
+@media (prefers-reduced-motion: reduce) {
+
+    /* Disable animation for users who prefer reduced motion */
+    .animated-text {
+        animation: none;
+        /* Fallback to static blue color */
+        background: var(--primary-blue);
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+}
+
+/* 
+   RESPONSIVE DESIGN
+   Students learn: How to adapt animations for different screen sizes
+   Mobile devices may need simpler animations for performance
+*/
+@media (max-width: 768px) {
+    .hero-title {
+        /* Smaller font size on mobile */
+        font-size: var(--font-size-3xl);
+        /* Center align on mobile for better appearance */
+        align-items: center;
+        text-align: center;
+    }
+
+    .animated-text {
+        /* Slower animation on mobile to reduce battery usage */
+        animation-duration: 4s;
+    }
+}
+
+/* 
+   ENGINEERING PRINCIPLES DEMONSTRATED:
+   
+   1. SEPARATION OF CONCERNS
+      - Structure (HTML) defines content
+      - Presentation (CSS) defines appearance
+      - Behavior (animation) is controlled separately
+   
+   2. MAINTAINABILITY
+      - CSS custom properties make colors easy to change
+      - Clear class names make code self-documenting
+      - Modular approach allows easy modifications
+   
+   3. PERFORMANCE
+      - Uses GPU-accelerated properties (transform, opacity)
+      - Respects user preferences (reduced motion)
+      - Optimized for mobile devices
+   
+   4. ACCESSIBILITY
+      - Maintains text readability
+      - Provides fallbacks for unsupported features
+      - Respects user motion preferences
+   
+   5. SCALABILITY
+      - Uses CSS custom properties for easy theming
+      - Modular classes can be reused
+      - Responsive design adapts to any screen size
+*/
+
+/* 
+   NEXT STEPS FOR STUDENTS:
+   
+   1. Experiment with different animation durations
+   2. Try different gradient color combinations
+   3. Add transform properties for movement effects
+   4. Create variations for different text elements
+   5. Study how professional websites implement similar effects
+   
+   Remember: Great engineers write code that is:
+   - Readable by other developers
+   - Maintainable over time
+   - Accessible to all users
+   - Performant on all devices
+*//* 
+===== GLOBAL DROPDOWN STYLING ===== */
+
+/* 
+   EDUCATIONAL NOTE: Global select element styling
+   This ensures all dropdown elements use black text for consistency
+   Students learn: How to apply consistent styling across an entire application
+*/
+
+/* All select elements use black text */
+select {
+    color: #000000 !important;
+    font-weight: 500;
+}
+
+/* All option elements use black text */
+select option {
+    color: #000000 !important;
+    background: white;
+    font-weight: 500;
+}
+
+/* Ensure black text is maintained in all states */
+select:focus,
+select:hover,
+select:active {
+    color: #000000 !important;
+}
+
+/* 
+   PROFESSIONAL PRINCIPLE: Consistent User Interface
+   
+   Why this global approach is important:
+   1. CONSISTENCY: All dropdowns look the same throughout the app
+   2. MAINTAINABILITY: One place to change dropdown styling
+   3. USER EXPERIENCE: Users know what to expect from form elements
+   4. ACCESSIBILITY: Consistent contrast ratios across all forms
+   
+   The !important declaration ensures this styling takes precedence
+   over any other conflicting styles that might be applied elsewhere.
+   
+   Students learn:
+   - When to use global styles vs component-specific styles
+   - How to ensure consistency across large applications
+   - The importance of visual hierarchy in form design
+   - Professional approaches to CSS architecture
+*//* =
+==== STUDENT SUCCESS SECTION STYLING ===== */
+
+/* 
+   EDUCATIONAL NOTE: Student-focused section design
+   This section demonstrates how to create engaging, user-centered content
+   Students learn: How to design for your target audience
+*/
+
+/* Benefit card hover effects */
+.benefit-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 
+        0 12px 30px rgba(37, 99, 235, 0.15),
+        0 6px 15px rgba(96, 165, 250, 0.1);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Animated statistics */
+.stat-number {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.stat-item:hover .stat-number {
+    transform: scale(1.1);
+    text-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Statistics animation on scroll */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-item {
+    animation: countUp 0.6s ease-out forwards;
+    animation-delay: calc(var(--animation-delay, 0) * 0.2s);
+}
+
+/* Benefit icon gradient animation */
+.benefit-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        transparent 100%
+    );
+    transition: left 0.5s ease;
+}
+
+.benefit-card:hover .benefit-icon::before {
+    left: 100%;
+}
+
+/* Student benefits grid responsive design */
+@media (max-width: 768px) {
+    .student-benefits {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .student-stats {
+        flex-direction: column;
+        gap: var(--space-4);
+    }
+    
+    .stat-number {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+/* 
+   DESIGN PRINCIPLES DEMONSTRATED:
+   
+   1. USER-CENTERED DESIGN
+      - Content focuses on student benefits, not institutional prestige
+      - Clear value propositions that students can relate to
+      - Statistics that matter to the end user
+   
+   2. VISUAL HIERARCHY
+      - Icons draw attention to key benefits
+      - Statistics are prominently displayed
+      - Consistent spacing creates rhythm
+   
+   3. INTERACTIVE DESIGN
+      - Hover effects provide feedback
+      - Animations create engagement
+      - Responsive design works on all devices
+   
+   4. ACCESSIBILITY
+      - High contrast colors for readability
+      - Clear typography hierarchy
+      - Touch-friendly interactive elements
+   
+   Students learn:
+   - How to design for your target audience
+   - The importance of user-centered content
+   - Creating engaging interactive elements
+   - Balancing aesthetics with functionality
+*/

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lost & Found</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/hero-animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;"></a>
+            <i class="fas fa-search-location brand-icon"></i>
+            <span class="brand-text">Lost & Found</span>
+            </a>
+            <div class="nav-links">
+                <a href="login.html" class="nav-link">Already have an account?</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Form -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container" style="max-width: 500px; margin: 0 auto;">
+                <div class="card auth-card">
+                    <div class="card-header">
+                        <h1 class="card-title">Create Your Account</h1>
+                        <p class="card-description">Join our Lost & Found management system and start organizing your
+                            school's items efficiently.</p>
+                    </div>
+
+                    <div class="card-body">
+                        <!-- Success/Error Messages -->
+                        <div id="messageContainer"></div>
+
+                        <form id="registerForm" novalidate>
+                            <!-- Personal Information -->
+                            <div class="form-group">
+                                <label for="fullName" class="form-label">
+                                    <i class="fas fa-user"></i> Full Name
+                                </label>
+                                <input type="text" id="fullName" name="fullName" class="form-input"
+                                    placeholder="Enter your full name" required>
+                                <div class="form-error" id="fullNameError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i> Email Address
+                                </label>
+                                <input type="email" id="email" name="email" class="form-input"
+                                    placeholder="Enter your email address" required>
+                                <div class="form-error" id="emailError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">
+                                    <i class="fas fa-phone"></i> Phone Number
+                                </label>
+                                <input type="tel" id="phone" name="phone" class="form-input"
+                                    placeholder="Enter your phone number" required>
+                                <div class="form-error" id="phoneError"></div>
+                            </div>
+
+                            <!-- School Information -->
+                            <div class="form-group">
+                                <label for="schoolName" class="form-label">
+                                    <i class="fas fa-school"></i> School Name
+                                </label>
+                                <input type="text" id="schoolName" name="schoolName" class="form-input"
+                                    placeholder="Enter your school name" required>
+                                <div class="form-error" id="schoolNameError"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="role" class="form-label">
+                                    <i class="fas fa-user-tag"></i> Your Role
+                                </label>
+                                <select id="role" name="role" class="form-select" required>
+                                    <option value="">Select your role</option>
+                                    <option value="admin">School Administrator</option>
+                                    <option value="teacher">Teacher</option>
+                                    <option value="staff">Support Staff</option>
+                                    <option value="security">Security Personnel</option>
+                                </select>
+                                <div class="form-error" id="roleError"></div>
+                            </div>
+
+                            <!-- Password -->
+                            <div class="form-group">
+                                <label for="password" class="form-label">
+                                    <i class="fas fa-lock"></i> Password
+                                </label>
+                                <div style="position: relative;">
+                                    <input type="password" id="password" name="password" class="form-input"
+                                        placeholder="Create a strong password" required>
+                                    <button type="button" id="togglePassword"
+                                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--gray-500); cursor: pointer;">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="form-error" id="passwordError"></div>
+                                <div class="password-strength" id="passwordStrength"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword" class="form-label">
+                                    <i class="fas fa-lock"></i> Confirm Password
+                                </label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" class="form-input"
+                                    placeholder="Confirm your password" required>
+                                <div class="form-error" id="confirmPasswordError"></div>
+                            </div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="form-group">
+                                <label class="checkbox-label"
+                                    style="display: flex; align-items: flex-start; gap: var(--space-2); cursor: pointer;">
+                                    <input type="checkbox" id="terms" name="terms" required style="margin-top: 2px;">
+                                    <span style="font-size: var(--font-size-sm); color: var(--gray-600);">
+                                        I agree to the <a href="#" style="color: var(--primary-600);">Terms of
+                                            Service</a>
+                                        and <a href="#" style="color: var(--primary-600);">Privacy Policy</a>
+                                    </span>
+                                </label>
+                                <div class="form-error" id="termsError"></div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary btn-full btn-large" id="submitBtn">
+                                <i class="fas fa-user-plus"></i>
+                                Create Account
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="card-footer" style="text-align: center;">
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">
+                            Already have an account?
+                            <a href="login.html" style="color: var(--primary-600); font-weight: 500;">Sign in here</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/validation.js"></script>
+    <script src="../js/register.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,464 @@
+/* 
+   EDUCATIONAL CSS BASE - Clean, Beginner-Friendly Styles
+   
+   PURPOSE: This file provides clean, well-documented CSS that helps students
+   learn professional web development practices without overwhelming complexity.
+   
+   LEARNING OBJECTIVES:
+   - Understand CSS custom properties (variables)
+   - Learn professional color system design
+   - Practice responsive design principles
+   - Study accessibility best practices
+*/
+
+/* ===== CSS CUSTOM PROPERTIES (VARIABLES) ===== */
+
+/* 
+   CSS Custom Properties allow us to define reusable values
+   This makes our code more maintainable and easier to modify
+   Students learn: How to create scalable design systems
+*/
+:root {
+    /* COLOR SYSTEM - Professional blue monochromatic palette */
+    --primary-blue: #2563eb;
+    /* Main brand color */
+    --light-blue: #60a5fa;
+    /* Lighter accent */
+    --dark-blue: #1d4ed8;
+    /* Darker accent */
+    --pale-blue: #dbeafe;
+    /* Very light background */
+
+    /* TEXT COLORS - Blue-black mix for readability */
+    --text-dark: #1e293b;
+    /* Main headings */
+    --text-paragraph: #1a2332;
+    /* Body text */
+    --text-light: #64748b;
+    /* Secondary text */
+
+    /* SPACING SYSTEM - Consistent spacing throughout */
+    --space-1: 0.25rem;
+    /* 4px */
+    --space-2: 0.5rem;
+    /* 8px */
+    --space-3: 0.75rem;
+    /* 12px */
+    --space-4: 1rem;
+    /* 16px */
+    --space-6: 1.5rem;
+    /* 24px */
+    --space-8: 2rem;
+    /* 32px */
+
+    /* TYPOGRAPHY SCALE - Harmonious font sizes */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-base: 1rem;
+    /* 16px */
+    --font-size-lg: 1.125rem;
+    /* 18px */
+    --font-size-xl: 1.25rem;
+    /* 20px */
+    --font-size-2xl: 1.5rem;
+    /* 24px */
+    --font-size-3xl: 1.875rem;
+    /* 30px */
+    --font-size-4xl: 2.25rem;
+    /* 36px */
+
+    /* BORDER RADIUS - Consistent rounded corners */
+    --radius-sm: 0.375rem;
+    /* 6px */
+    --radius-md: 0.5rem;
+    /* 8px */
+    --radius-lg: 0.75rem;
+    /* 12px */
+}
+
+/* ===== BASE STYLES ===== */
+
+/* 
+   CSS Reset - Removes browser default styles
+   This ensures consistent appearance across all browsers
+   Students learn: Why CSS resets are important
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Makes width/height calculations easier */
+}
+
+/* 
+   Body styles - Foundation for the entire page
+   Students learn: How to set up base typography and colors
+*/
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    /* Improves text readability */
+    color: var(--text-paragraph);
+    background-color: var(--pale-blue);
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+/* 
+   Heading styles - Creates visual hierarchy
+   Students learn: How typography creates information structure
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-dark);
+    font-weight: 600;
+    line-height: 1.2;
+    /* Tighter line height for headings */
+    margin-bottom: var(--space-4);
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+/* 
+   Paragraph styles - Readable body text
+   Students learn: How to optimize text for reading
+*/
+p {
+    margin-bottom: var(--space-4);
+    color: var(--text-paragraph);
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+
+/* 
+   Container class - Centers content and limits width
+   Students learn: How to create responsive layouts
+*/
+.container {
+    max-width: 1200px;
+    /* Prevents content from being too wide */
+    margin: 0 auto;
+    /* Centers the container */
+    padding: 0 var(--space-4);
+    /* Adds side padding */
+}
+
+/* 
+   Section class - Consistent vertical spacing
+   Students learn: How to create rhythm in page layout
+*/
+.section {
+    padding: var(--space-8) 0;
+    /* Top and bottom padding */
+}
+
+/* ===== BUTTON STYLES ===== */
+
+/* 
+   Base button styles - Foundation for all buttons
+   Students learn: How to create reusable component styles
+*/
+.btn {
+    display: inline-flex;
+    /* Allows flexible alignment */
+    align-items: center;
+    /* Centers content vertically */
+    justify-content: center;
+    /* Centers content horizontally */
+    gap: var(--space-2);
+    /* Space between icon and text */
+
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    border-radius: var(--radius-md);
+
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    font-family: inherit;
+    /* Uses same font as parent */
+    text-decoration: none;
+    /* Removes underline from links */
+
+    cursor: pointer;
+    /* Shows it's clickable */
+    transition: all 0.2s ease;
+    /* Smooth hover effects */
+}
+
+/* 
+   Primary button - Main call-to-action style
+   Students learn: How to create emphasis through color and contrast
+*/
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--dark-blue);
+    transform: translateY(-1px);
+    /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+/* 
+   Secondary button - Alternative action style
+   Students learn: How to create visual hierarchy with button styles
+*/
+.btn-secondary {
+    background: white;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+}
+
+.btn-secondary:hover {
+    background: var(--pale-blue);
+    transform: translateY(-1px);
+}
+
+/* ===== FORM STYLES ===== */
+
+/* 
+   Form input styles - Clean, accessible form elements
+   Students learn: How to style forms for better user experience
+*/
+.form-input {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+
+    /* Black text for better readability */
+    color: #000000;
+    font-weight: 500;
+}
+
+/* 
+   Form select (dropdown) styles - Professional dropdown appearance
+   Students learn: How to style select elements consistently
+*/
+.form-select {
+    width: 100%;
+    padding: var(--space-3);
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+
+    /* Black text for dropdown and options */
+    color: #000000;
+    font-weight: 500;
+}
+
+/* Ensure all dropdown options use black text */
+.form-select option {
+    color: #000000;
+    background: white;
+    font-weight: 500;
+}
+
+.form-input:focus {
+    outline: none;
+    /* Remove default browser outline */
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* 
+   Form label styles - Clear, accessible labels
+   Students learn: Importance of proper form labeling
+*/
+.form-label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* ===== CARD STYLES ===== */
+
+/* 
+   Card component - Flexible content container
+   Students learn: How to create reusable layout components
+*/
+.card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Prevents content from breaking out */
+}
+
+.card-header {
+    padding: var(--space-6);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.card-body {
+    padding: var(--space-6);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* 
+   Mobile-first responsive design
+   Students learn: How to create layouts that work on all devices
+*/
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-3);
+        /* Less padding on mobile */
+    }
+
+    h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    h2 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .btn {
+        width: 100%;
+        /* Full-width buttons on mobile */
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+
+/* 
+   Focus styles for keyboard navigation
+   Students learn: Importance of accessibility in web development
+*/
+.btn:focus-visible,
+.form-input:focus-visible {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* 
+   Reduced motion for users who prefer less animation
+   Students learn: How to respect user preferences
+*/
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 
+   LEARNING EXERCISES FOR STUDENTS:
+   
+   1. BEGINNER:
+      - Change the primary blue color to a different shade
+      - Modify the spacing scale to use different values
+      - Add a new button variant (e.g., .btn-danger)
+   
+   2. INTERMEDIATE:
+      - Create a dark theme using CSS custom properties
+      - Add more responsive breakpoints
+      - Implement a grid system for layouts
+   
+   3. ADVANCED:
+      - Add CSS animations for micro-interactions
+      - Create a complete component library
+      - Implement advanced accessibility features
+   
+   PROFESSIONAL PRINCIPLES DEMONSTRATED:
+   - Maintainable code through CSS custom properties
+   - Scalable design system with consistent patterns
+   - Accessibility-first approach
+   - Performance-optimized styles
+   - Mobile-first responsive design
+*/
+/* =
+==== DROPDOWN (SELECT) SPECIFIC STYLES ===== */
+
+/* 
+   Professional dropdown styling with black text
+   Students learn: How to ensure consistent text color across form elements
+   
+   IMPORTANT: Black text in dropdowns improves readability and provides
+   better contrast against light backgrounds
+*/
+
+/* Focus state for dropdowns */
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+
+    /* Maintain black text on focus for readability */
+    color: #000000;
+}
+
+/* Hover state for dropdowns */
+.form-select:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+
+    /* Maintain black text on hover */
+    color: #000000;
+}
+
+/* 
+   Dropdown arrow styling (browser-specific)
+   Students learn: How to handle browser-specific styling
+*/
+.form-select {
+    /* Ensure consistent appearance across browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Add custom dropdown arrow */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* 
+   EDUCATIONAL NOTE FOR STUDENTS:
+   
+   Why we use black text for dropdowns:
+   1. READABILITY: Black text provides maximum contrast against white backgrounds
+   2. CONSISTENCY: Matches standard form input text color
+   3. ACCESSIBILITY: Meets WCAG contrast requirements
+   4. PROFESSIONALISM: Black text is the standard for business applications
+   
+   Browser compatibility considerations:
+   - Different browsers style select elements differently
+   - We use appearance: none to reset browser defaults
+   - Custom background image provides consistent arrow across browsers
+   
+   Best practices demonstrated:
+   - Consistent color scheme across all form elements
+   - Proper focus and hover states for user feedback
+   - Accessibility-compliant contrast ratios
+   - Cross-browser compatibility techniques
+*/

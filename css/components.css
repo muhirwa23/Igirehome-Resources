@@ -1,0 +1,729 @@
+/* ===== BUTTON COMPONENTS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* PRIMARY BUTTON - Premium ice-cold design with advanced effects */
+.btn-primary {
+    /* Sophisticated gradient background using monochromatic blues */
+    background: linear-gradient(135deg, 
+        var(--primary-blue) 0%,          /* Primary brand color */
+        var(--dark-blue) 50%,            /* Darker accent for depth */
+        var(--primary-blue) 100%         /* Return to primary */
+    );
+    
+    color: white;
+    font-weight: 600;
+    
+    /* Premium shadow system with blue tinting */
+    box-shadow: 
+        0 4px 14px 0 rgba(37, 99, 235, 0.25),      /* Primary shadow */
+        0 2px 6px 0 rgba(29, 78, 216, 0.15),       /* Secondary shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);    /* Inner highlight */
+    
+    /* Subtle border for definition */
+    border: 1px solid var(--primary-blue);
+    
+    /* Smooth transitions with premium easing */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Button shine effect overlay - creates premium feel */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.2) 50%, 
+        transparent 100%
+    );
+    transition: left 0.5s ease;
+}
+
+/* 🚀 Primary button hover effects - premium interactions */
+.btn-primary:hover:not(:disabled) {
+    /* 🎨 Enhanced gradient on hover */
+    background: linear-gradient(135deg, 
+        var(--dark-blue) 0%, 
+        var(--primary-blue) 50%, 
+        var(--dark-blue) 100%
+    );
+    
+    /* 💫 Enhanced shadows with blue glow */
+    box-shadow: 
+        0 8px 25px 0 rgba(37, 99, 235, 0.35),      /* Larger shadow */
+        0 4px 12px 0 rgba(29, 78, 216, 0.25),      /* Medium shadow */
+        0 2px 6px 0 rgba(37, 99, 235, 0.2),        /* Close shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);   /* Brighter inner glow */
+    
+    /* 🎯 Lift effect with subtle scale */
+    transform: translateY(-3px) scale(1.02);
+    
+    /* 🌟 Enhanced border */
+    border-color: var(--dark-blue);
+}
+
+/* ✨ Shine effect animation on hover */
+.btn-primary:hover::before {
+    left: 100%;                          /* Move shine across button */
+}
+
+/* 🧊 SECONDARY BUTTON - Ice-cold glass morphism design */
+.btn-secondary {
+    /* 🌟 Glass morphism background with ice tinting */
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.9) 0%,     /* Semi-transparent white */
+        rgba(239, 246, 255, 0.7) 50%,    /* Light blue tint */
+        rgba(255, 255, 255, 0.9) 100%    /* Semi-transparent white */
+    );
+    
+    color: var(--text-dark);
+    
+    /* 🎨 Subtle blue-tinted border */
+    border: 1.5px solid rgba(37, 99, 235, 0.15);
+    
+    /* 💎 Soft shadow with blue tinting */
+    box-shadow: 
+        0 2px 8px 0 rgba(37, 99, 235, 0.08),       /* Primary shadow */
+        0 1px 3px 0 rgba(96, 165, 250, 0.04),      /* Secondary shadow */
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);    /* Inner highlight */
+    
+    /* 🧊 Glass effects */
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+    
+    /* ✨ Smooth transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 🚀 Secondary button blue family hover effects */
+.btn-secondary:hover:not(:disabled) {
+    /* 🎨 Cool blue family background instead of white */
+    background: linear-gradient(135deg, 
+        rgba(219, 234, 254, 0.95) 0%,    /* Pale blue */
+        rgba(186, 230, 253, 0.9) 25%,    /* Light blue */
+        rgba(147, 197, 253, 0.85) 50%,   /* Medium blue */
+        rgba(186, 230, 253, 0.9) 75%,    /* Light blue */
+        rgba(219, 234, 254, 0.95) 100%   /* Pale blue */
+    );
+    
+    /* 🌟 Enhanced blue border */
+    border-color: rgba(37, 99, 235, 0.4);
+    
+    /* 💫 Blue-tinted shadows */
+    box-shadow: 
+        0 6px 20px 0 rgba(37, 99, 235, 0.2),       /* Large blue shadow */
+        0 3px 10px 0 rgba(96, 165, 250, 0.15),     /* Medium blue shadow */
+        0 1px 4px 0 rgba(37, 99, 235, 0.1),        /* Close blue shadow */
+        inset 0 1px 0 rgba(96, 165, 250, 0.3);     /* Blue inner glow */
+    
+    /* 🎯 Enhanced lift effect */
+    transform: translateY(-3px) scale(1.03);
+    
+    /* 🌊 Blue text color */
+    color: var(--primary-blue);
+    
+    /* ✨ Add blue glow animation */
+    animation: blueGlowPulse 2s ease-in-out infinite;
+}
+
+.btn-large {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-base);
+}
+
+.btn-small {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-xs);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* ===== FORM COMPONENTS ===== */
+.form-group {
+    margin-bottom: var(--space-5);
+}
+
+/* 📝 Form label with blue-black mix for professional appearance */
+.form-label {
+    display: block;
+    font-weight: 600;                    /* Slightly lighter weight for better readability */
+    color: var(--text-paragraph);        /* Blue-black mix for consistency */
+    margin-bottom: var(--space-2);
+    font-size: var(--font-size-sm);
+    
+    /* 🎨 Subtle blue enhancement for premium feel */
+    text-shadow: 0 1px 1px rgba(37, 99, 235, 0.04);
+}
+
+.form-input {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    transition: all 0.2s ease;
+    background: white;
+    color: #000000;
+    font-weight: 700;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px var(--primary-50);
+}
+
+.form-input.error {
+    border-color: var(--error-500);
+}
+
+.form-input.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-select {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    background: white;
+    cursor: pointer;
+    
+    /* Black text color for all dropdown options */
+    color: #000000;
+    font-weight: 500;
+}
+
+/* Ensure dropdown options also use black text */
+.form-select option {
+    color: #000000;
+    background: white;
+    font-weight: 500;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: inherit;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-error {
+    color: var(--error-500);
+    font-size: var(--font-size-xs);
+    margin-top: var(--space-1);
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.form-success {
+    color: var(--success-500);
+    font-size: var(--font-size-xs);
+    margin-top: var(--space-1);
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+/* ===== CARD COMPONENTS ===== */
+.card {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: var(--space-6);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+/* 🏷️ Card title with blue-black mix for professional hierarchy */
+.card-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-dark);             /* Dark blue-black for headings */
+    margin-bottom: var(--space-2);
+    
+    /* 🎨 Subtle blue enhancement */
+    text-shadow: 0 1px 2px rgba(37, 99, 235, 0.05);
+}
+
+/* 📝 Card description with softer blue-black mix */
+.card-description {
+    color: var(--text-paragraph-light); /* Softer blue-black for descriptions */
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+    
+    /* 🌟 Subtle blue enhancement */
+    text-shadow: 0 1px 1px rgba(37, 99, 235, 0.03);
+}
+
+.card-body {
+    padding: var(--space-6);
+}
+
+.card-footer {
+    padding: var(--space-6);
+    border-top: 1px solid var(--gray-200);
+    background: var(--gray-50);
+}
+
+/* ===== ALERT COMPONENTS ===== */
+.alert {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.alert-success {
+    background: var(--success-50);
+    color: var(--success-700);
+    border: 1px solid var(--success-200);
+}
+
+.alert-error {
+    background: var(--error-50);
+    color: var(--error-700);
+    border: 1px solid var(--error-200);
+}
+
+.alert-warning {
+    background: var(--warning-50);
+    color: var(--warning-700);
+    border: 1px solid var(--warning-200);
+}
+
+/* ===== TABLE COMPONENTS ===== */
+.table-container {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    background: var(--gray-100);
+    padding: var(--space-4);
+    text-align: left;
+    font-weight: 700;
+    color: #000000;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: var(--font-size-sm);
+}
+
+.table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--gray-200);
+    color: #000000;
+    background: white;
+    font-weight: 700;
+}
+
+.table tbody tr:hover {
+    background: var(--gray-50);
+}
+
+/* ===== BADGE COMPONENTS ===== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+}
+
+.badge-primary {
+    background: var(--primary-50);
+    color: var(--primary-700);
+    border: 1px solid var(--primary-200);
+}
+
+.badge-success {
+    background: var(--success-50);
+    color: var(--success-700);
+    border: 1px solid var(--success-200);
+}
+
+.badge-error {
+    background: var(--error-50);
+    color: var(--error-700);
+    border: 1px solid var(--error-200);
+}
+
+/* ===== LOADING COMPONENTS ===== */
+.loading-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gray-200);
+    border-top: 2px solid var(--primary-500);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* ===== MODAL COMPONENTS ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+    transform: scale(1);
+}/* 🌊
+ BLUE FAMILY HOVER SYSTEM FOR COMPONENTS */
+
+/* 💎 Form Select Blue Hover */
+.form-select:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    background: linear-gradient(135deg, 
+        rgba(239, 246, 255, 0.8) 0%,
+        rgba(219, 234, 254, 0.6) 50%,
+        rgba(239, 246, 255, 0.8) 100%
+    );
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.15);
+    transform: translateY(-1px);
+    
+    /* Maintain black text on hover */
+    color: #000000;
+}
+
+.form-select:focus {
+    background: linear-gradient(135deg, 
+        rgba(219, 234, 254, 0.9) 0%,
+        rgba(186, 230, 253, 0.7) 50%,
+        rgba(219, 234, 254, 0.9) 100%
+    );
+    border-color: var(--primary-blue);
+    box-shadow: 
+        0 0 0 3px rgba(37, 99, 235, 0.15),
+        0 4px 12px rgba(37, 99, 235, 0.2);
+    
+    /* Maintain black text on focus */
+    color: #000000;
+}
+
+/* 🧊 Form Textarea Blue Hover */
+.form-textarea:hover {
+    border-color: rgba(37, 99, 235, 0.3);
+    background: linear-gradient(135deg, 
+        rgba(239, 246, 255, 0.6) 0%,
+        rgba(255, 255, 255, 0.9) 50%,
+        rgba(239, 246, 255, 0.6) 100%
+    );
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.form-textarea:focus {
+    background: linear-gradient(135deg, 
+        rgba(219, 234, 254, 0.8) 0%,
+        rgba(186, 230, 253, 0.6) 25%,
+        rgba(219, 234, 254, 0.8) 50%,
+        rgba(186, 230, 253, 0.6) 75%,
+        rgba(219, 234, 254, 0.8) 100%
+    );
+    border-color: var(--primary-blue);
+    box-shadow: 
+        0 0 0 3px rgba(37, 99, 235, 0.15),
+        0 6px 20px rgba(37, 99, 235, 0.2);
+}
+
+/* 🌟 Alert Blue Hover Effects */
+.alert:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+}
+
+.alert-success:hover {
+    background: linear-gradient(135deg, 
+        rgba(240, 253, 244, 0.9) 0%,
+        rgba(219, 234, 254, 0.3) 50%,
+        rgba(240, 253, 244, 0.9) 100%
+    );
+    border-left-color: var(--light-blue);
+}
+
+.alert-error:hover {
+    background: linear-gradient(135deg, 
+        rgba(254, 242, 242, 0.9) 0%,
+        rgba(219, 234, 254, 0.2) 50%,
+        rgba(254, 242, 242, 0.9) 100%
+    );
+    border-left-color: #ff6b9d; /* Pink-blue mix */
+}
+
+.alert-warning:hover {
+    background: linear-gradient(135deg, 
+        rgba(255, 251, 235, 0.9) 0%,
+        rgba(219, 234, 254, 0.2) 50%,
+        rgba(255, 251, 235, 0.9) 100%
+    );
+    border-left-color: #ffa726; /* Orange-blue mix */
+}
+
+/* 💫 Badge Blue Hover Enhancement */
+.badge-primary:hover {
+    background: linear-gradient(135deg, 
+        rgba(37, 99, 235, 0.2) 0%,
+        rgba(96, 165, 250, 0.15) 50%,
+        rgba(37, 99, 235, 0.2) 100%
+    );
+    color: var(--dark-blue);
+    border-color: rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+}
+
+.badge-success:hover {
+    background: linear-gradient(135deg, 
+        rgba(34, 197, 94, 0.15) 0%,
+        rgba(219, 234, 254, 0.1) 50%,
+        rgba(34, 197, 94, 0.15) 100%
+    );
+    color: var(--primary-blue);
+    border-color: rgba(37, 99, 235, 0.3);
+}
+
+.badge-error:hover {
+    background: linear-gradient(135deg, 
+        rgba(239, 68, 68, 0.15) 0%,
+        rgba(219, 234, 254, 0.1) 50%,
+        rgba(239, 68, 68, 0.15) 100%
+    );
+    color: #c53030; /* Red-blue mix */
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* 🎨 Modal Blue Hover */
+.modal:hover {
+    box-shadow: 
+        0 30px 60px -12px rgba(37, 99, 235, 0.3),
+        0 15px 30px -8px rgba(96, 165, 250, 0.2);
+    transform: scale(1.01);
+}
+
+.modal-overlay:hover {
+    background: rgba(37, 99, 235, 0.1);
+}
+
+/* 🌊 Loading Spinner Blue Enhancement */
+.loading-spinner:hover {
+    border-top-color: var(--light-blue);
+    animation: spin 0.8s linear infinite, blueGlowPulse 1.5s ease-in-out infinite;
+    transform: scale(1.1);
+}
+
+/* 💎 Card Header Blue Hover */
+.card-header:hover {
+    background: linear-gradient(135deg, 
+        rgba(239, 246, 255, 0.8) 0%,
+        rgba(219, 234, 254, 0.6) 100%
+    );
+    border-bottom-color: rgba(37, 99, 235, 0.2);
+}
+
+/* 🧊 Card Footer Blue Hover */
+.card-footer:hover {
+    background: linear-gradient(135deg, 
+        rgba(239, 246, 255, 0.9) 0%,
+        rgba(219, 234, 254, 0.7) 100%
+    );
+    border-top-color: rgba(37, 99, 235, 0.2);
+}
+
+/* 🌟 Button Size Variants Blue Hover */
+.btn-large:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.3);
+}
+
+.btn-small:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+.btn-full:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+/* 💫 Interactive Blue Hover Animations */
+.btn:hover::before {
+    animation: blueShimmer 1.5s ease-in-out infinite;
+}
+
+/* 🎨 Form Group Blue Hover */
+.form-group:hover .form-label {
+    color: var(--primary-blue);
+    transform: translateY(-1px);
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+/* 🌊 Checkbox and Radio Blue Hover */
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
+}
+
+input[type="checkbox"]:checked:hover,
+input[type="radio"]:checked:hover {
+    background: linear-gradient(135deg, 
+        var(--primary-blue) 0%,
+        var(--light-blue) 100%
+    );
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+}
+
+/* 💎 ADVANCED BLUE HOVER COMBINATIONS */
+
+/* 🧊 Multi-element hover effects */
+.card:hover .card-title {
+    color: var(--primary-blue);
+    text-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.card:hover .card-description {
+    color: var(--text-paragraph);
+    transform: translateY(-1px);
+}
+
+.form-group:hover .form-input {
+    border-color: rgba(37, 99, 235, 0.2);
+    background: rgba(239, 246, 255, 0.3);
+}
+
+/* 🌟 Button group blue hover */
+.btn-group .btn:hover {
+    z-index: 2;
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-group .btn:not(:hover) {
+    opacity: 0.8;
+    transform: scale(0.98);
+}
+
+/* 💫 ACCESSIBILITY BLUE HOVER ENHANCEMENTS */
+.btn:focus-visible:hover {
+    outline: 3px solid rgba(37, 99, 235, 0.5);
+    outline-offset: 3px;
+    box-shadow: 
+        0 0 0 6px rgba(37, 99, 235, 0.15),
+        0 12px 30px rgba(37, 99, 235, 0.3);
+}
+
+/* 🎯 High contrast blue hover */
+@media (prefers-contrast: high) {
+    .btn:hover,
+    .form-input:hover,
+    .card:hover {
+        border: 3px solid var(--primary-blue);
+        background: rgba(37, 99, 235, 0.1);
+    }
+}
+
+/* 📱 Touch device blue hover adjustments */
+@media (hover: none) and (pointer: coarse) {
+    .btn:active,
+    .form-input:focus,
+    .card:active {
+        background: linear-gradient(135deg, 
+            rgba(219, 234, 254, 0.8) 0%,
+            rgba(186, 230, 253, 0.6) 100%
+        );
+        transform: scale(0.98);
+    }
+}/*
+ 🌟 TH

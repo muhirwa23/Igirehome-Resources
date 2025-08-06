@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found - School Management System</title>
+    <link rel="stylesheet" href="../css/theme-system.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/hero-animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 🌙 Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+        <i class="fas fa-moon theme-toggle-icon" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-search-location brand-icon"></i>
+                <span class="brand-text">Lost & Found</span>
+            </div>
+            <div class="nav-links">
+                <a href="login.html" class="nav-link">Login</a>
+                <a href="register.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🚀 HERO SECTION - Premium landing area with ice-cold aesthetics -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- 📝 Hero Content - Main messaging and call-to-action -->
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-main">Manage Lost & Found Items</span>
+                    <span class="title-highlight animated-text">Effortlessly</span>
+                </h1>
+                <p class="hero-description premium-paragraph">
+                    A modern, intuitive platform for schools to track and manage lost and found items. 
+                    Connect students with their belongings quickly and efficiently with our premium SaaS solution.
+                </p>
+                
+                <!-- 🎯 Call-to-Action Buttons - Primary user actions -->
+                <div class="hero-actions">
+                    <a href="register.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Start Free Trial
+                    </a>
+                    <a href="login.html" class="btn btn-secondary btn-large">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Sign In
+                    </a>
+                </div>
+                
+                <!-- 📊 Trust Indicators - Build credibility with blue hover effects -->
+                <div class="trust-indicators" style="margin-top: var(--space-8); display: flex; align-items: center; gap: var(--space-6); flex-wrap: wrap;">
+                    <div class="trust-item hover-blue-light" style="display: flex; align-items: center; gap: var(--space-2); color: var(--gray-600); font-size: var(--font-size-sm); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); transition: all 0.3s ease; cursor: pointer;">
+                        <i class="fas fa-check-circle" style="color: var(--primary-blue); transition: all 0.3s ease;"></i>
+                        <span>Free 30-day trial</span>
+                    </div>
+                    <div class="trust-item hover-blue-light" style="display: flex; align-items: center; gap: var(--space-2); color: var(--gray-600); font-size: var(--font-size-sm); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); transition: all 0.3s ease; cursor: pointer;">
+                        <i class="fas fa-shield-alt" style="color: var(--primary-blue); transition: all 0.3s ease;"></i>
+                        <span>Enterprise security</span>
+                    </div>
+                    <div class="trust-item hover-blue-light" style="display: flex; align-items: center; gap: var(--space-2); color: var(--gray-600); font-size: var(--font-size-sm); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); transition: all 0.3s ease; cursor: pointer;">
+                        <i class="fas fa-users" style="color: var(--primary-blue); transition: all 0.3s ease;"></i>
+                        <span>500+ schools trust us</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 💎 Hero Visual - Feature preview cards -->
+            <div class="hero-visual">
+                <div class="feature-card">
+                    <i class="fas fa-search feature-icon"></i>
+                    <h3>Quick Search</h3>
+                    <p>Find items instantly with AI-powered smart search and filtering</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell feature-icon"></i>
+                    <h3>Smart Notifications</h3>
+                    <p>Get real-time alerts when items are found or claimed</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-level security with encrypted data protection</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💎 FEATURES SECTION - Premium feature showcase with ice-cold design -->
+    <section class="features">
+        <div class="container">
+            <!-- 📋 Section Header - Main messaging -->
+            <div class="section-header">
+                <h2 class="section-title premium-text">Why Choose Our Platform?</h2>
+                <p class="section-description text-professional">Built for modern schools with efficiency and user experience in mind. Experience the power of premium SaaS technology.</p>
+                
+                <!-- 🏆 Feature badges for credibility with blue hover effects -->
+                <div class="feature-badges" style="display: flex; justify-content: center; gap: var(--space-4); margin-top: var(--space-6); flex-wrap: wrap;">
+                    <div class="badge glass-card hover-blue-medium" style="padding: var(--space-2) var(--space-4); border-radius: var(--radius-md); font-size: var(--font-size-xs); font-weight: 600; color: var(--primary-blue); cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <i class="fas fa-award"></i> Award Winning
+                    </div>
+                    <div class="badge glass-card hover-blue-medium" style="padding: var(--space-2) var(--space-4); border-radius: var(--radius-md); font-size: var(--font-size-xs); font-weight: 600; color: var(--primary-blue); cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <i class="fas fa-star"></i> 5-Star Rated
+                    </div>
+                    <div class="badge glass-card hover-blue-medium" style="padding: var(--space-2) var(--space-4); border-radius: var(--radius-md); font-size: var(--font-size-xs); font-weight: 600; color: var(--primary-blue); cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <i class="fas fa-shield-alt"></i> SOC 2 Compliant
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 🎯 Features Grid - Main feature showcase -->
+            <div class="features-grid">
+                <div class="feature-item premium-hover ice-pattern">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Student Management</h3>
+                    <p>Comprehensive student profiles with advanced tracking, analytics, and automated workflows for seamless administration.</p>
+                    
+                    <!-- 📊 Feature stats -->
+                    <div class="feature-stats" style="margin-top: var(--space-3); font-size: var(--font-size-xs); color: var(--primary-blue); font-weight: 600;">
+                        <i class="fas fa-check-circle"></i> 99.9% Accuracy
+                    </div>
+                </div>
+                
+                <div class="feature-item premium-hover ice-pattern">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Smart Item Database</h3>
+                    <p>AI-powered catalog with image recognition, automatic categorization, and intelligent matching algorithms.</p>
+                    
+                    <div class="feature-stats" style="margin-top: var(--space-3); font-size: var(--font-size-xs); color: var(--primary-blue); font-weight: 600;">
+                        <i class="fas fa-bolt"></i> Lightning Fast
+                    </div>
+                </div>
+                
+                <div class="feature-item premium-hover ice-pattern">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Excellence</h3>
+                    <p>Native mobile apps with offline sync, push notifications, and responsive design for any device or screen size.</p>
+                    
+                    <div class="feature-stats" style="margin-top: var(--space-3); font-size: var(--font-size-xs); color: var(--primary-blue); font-weight: 600;">
+                        <i class="fas fa-mobile-alt"></i> iOS & Android
+                    </div>
+                </div>
+                
+                <div class="feature-item premium-hover ice-pattern">
+                    <div class="feature-icon-wrapper">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Advanced Analytics</h3>
+                    <p>Real-time dashboards, predictive insights, custom reports, and data visualization for informed decision making.</p>
+                    
+                    <div class="feature-stats" style="margin-top: var(--space-3); font-size: var(--font-size-xs); color: var(--primary-blue); font-weight: 600;">
+                        <i class="fas fa-chart-bar"></i> Real-time Data
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Student Success Stories Section -->
+            <div class="student-success" style="margin-top: var(--space-16); text-align: center;">
+                <h3 style="color: var(--text-dark); margin-bottom: var(--space-4); font-size: var(--font-size-2xl);">
+                    Helping Students Stay Organized
+                </h3>
+                <p style="color: var(--text-paragraph-light); margin-bottom: var(--space-8); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Our Lost & Found system makes it easy for students to recover their belongings and stay focused on learning.
+                </p>
+                
+                <!-- Student Benefits Grid -->
+                <div class="student-benefits" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);">
+                    <div class="benefit-card glass-card hover-blue-light" style="padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+                        <div class="benefit-icon" style="width: 3rem; height: 3rem; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+                            <i class="fas fa-clock" style="color: white; font-size: var(--font-size-lg);"></i>
+                        </div>
+                        <h4 style="color: var(--text-dark); margin-bottom: var(--space-2); font-size: var(--font-size-lg); font-weight: 600;">
+                            Save Time
+                        </h4>
+                        <p style="color: var(--text-paragraph); font-size: var(--font-size-sm); line-height: 1.5;">
+                            Quickly report and find lost items without spending hours searching around campus.
+                        </p>
+                    </div>
+                    
+                    <div class="benefit-card glass-card hover-blue-light" style="padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+                        <div class="benefit-icon" style="width: 3rem; height: 3rem; background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+                            <i class="fas fa-bell" style="color: white; font-size: var(--font-size-lg);"></i>
+                        </div>
+                        <h4 style="color: var(--text-dark); margin-bottom: var(--space-2); font-size: var(--font-size-lg); font-weight: 600;">
+                            Get Notified
+                        </h4>
+                        <p style="color: var(--text-paragraph); font-size: var(--font-size-sm); line-height: 1.5;">
+                            Receive instant notifications when your lost items are found and ready for pickup.
+                        </p>
+                    </div>
+                    
+                    <div class="benefit-card glass-card hover-blue-light" style="padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; transition: all 0.3s ease; cursor: pointer;">
+                        <div class="benefit-icon" style="width: 3rem; height: 3rem; background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4);">
+                            <i class="fas fa-graduation-cap" style="color: white; font-size: var(--font-size-lg);"></i>
+                        </div>
+                        <h4 style="color: var(--text-dark); margin-bottom: var(--space-2); font-size: var(--font-size-lg); font-weight: 600;">
+                            Focus on Learning
+                        </h4>
+                        <p style="color: var(--text-paragraph); font-size: var(--font-size-sm); line-height: 1.5;">
+                            Spend less time worrying about lost belongings and more time on your studies.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Student Statistics -->
+                <div class="student-stats" style="margin-top: var(--space-12); display: flex; justify-content: center; gap: var(--space-8); flex-wrap: wrap;">
+                    <div class="stat-item" style="text-align: center;">
+                        <div class="stat-number" style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--primary-blue); margin-bottom: var(--space-1);">
+                            95%
+                        </div>
+                        <div class="stat-label" style="color: var(--text-paragraph-light); font-size: var(--font-size-sm); font-weight: 500;">
+                            Items Recovered
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item" style="text-align: center;">
+                        <div class="stat-number" style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--primary-blue); margin-bottom: var(--space-1);">
+                            2.5hrs
+                        </div>
+                        <div class="stat-label" style="color: var(--text-paragraph-light); font-size: var(--font-size-sm); font-weight: 500;">
+                            Average Recovery Time
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item" style="text-align: center;">
+                        <div class="stat-number" style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--primary-blue); margin-bottom: var(--space-1);">
+                            24/7
+                        </div>
+                        <div class="stat-label" style="color: var(--text-paragraph-light); font-size: var(--font-size-sm); font-weight: 500;">
+                            System Availability
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary-50) 0%, rgba(224, 242, 254, 0.7) 25%, var(--primary-100) 50%, rgba(186, 230, 253, 0.5) 75%, var(--primary-50) 100%);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">Simple steps to get started with our Lost & Found system</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8);">
+                <div class="step-card" style="text-align: center; padding: var(--space-6);">
+                    <div class="step-number" style="width: 4rem; height: 4rem; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4); font-size: var(--font-size-xl); font-weight: 700;">
+                        1
+                    </div>
+                    <h3 style="font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--space-3); color: var(--gray-800);">Register Your School</h3>
+                    <p style="color: var(--gray-600); line-height: 1.6;">Create an account and set up your school's Lost & Found management system in minutes.</p>
+                </div>
+                <div class="step-card" style="text-align: center; padding: var(--space-6);">
+                    <div class="step-number" style="width: 4rem; height: 4rem; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4); font-size: var(--font-size-xl); font-weight: 700;">
+                        2
+                    </div>
+                    <h3 style="font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--space-3); color: var(--gray-800);">Add Students</h3>
+                    <p style="color: var(--gray-600); line-height: 1.6;">Import or manually add student information to build your comprehensive database.</p>
+                </div>
+                <div class="step-card" style="text-align: center; padding: var(--space-6);">
+                    <div class="step-number" style="width: 4rem; height: 4rem; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-4); font-size: var(--font-size-xl); font-weight: 700;">
+                        3
+                    </div>
+                    <h3 style="font-size: var(--font-size-xl); font-weight: 600; margin-bottom: var(--space-3); color: var(--gray-800);">Track Items</h3>
+                    <p style="color: var(--gray-600); line-height: 1.6;">Report lost items, log found items, and reunite students with their belongings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section cta-section" style="color: rgb(51, 141, 209);">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: var(--font-size-3xl); font-weight: 700; margin-bottom: var(--space-4);">
+                Ready to Get Started?
+            </h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--space-8); opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join hundreds of schools already using our Lost & Found management system to keep track of student belongings.
+            </p>
+            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                <a href="register.html" class="btn btn-large" style="background: white; color: var(--primary-600); border: none;">
+                    <i class="fas fa-user-plus"></i>
+                    Create Free Account
+                </a>
+                <a href="login.html" class="btn btn-large" style="background: transparent; color: white; border: 2px solid white;">
+                    <i class="fas fa-play-circle"></i>
+                    Try Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-search-location brand-icon"></i>
+                    <span class="brand-text">Lost & Found</span>
+                </div>
+                <p class="footer-text">Making school management simpler, one item at a time.</p>
+                <div style="margin-top: var(--space-4);">
+                    <p style="color: var(--gray-500); font-size: var(--font-size-sm);">
+                        © 2024 Lost & Found Management System. Built for educational purposes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/theme-toggle.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

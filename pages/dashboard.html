@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Lost & Found</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/hero-animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-search-location brand-icon"></i>
+                <span class="brand-text">Lost & Found</span>
+            </a>
+            <div class="nav-links">
+                <span id="userWelcome" class="nav-link">Welcome, User!</span>
+                <button id="logoutBtn" class="btn btn-secondary">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Dashboard Header -->
+            <div class="dashboard-header" style="margin-bottom: var(--space-8);">
+                <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--gray-900); margin-bottom: var(--space-2);">
+                    Dashboard Overview
+                </h1>
+                <p style="color: var(--gray-600); font-size: var(--font-size-lg);">
+                    Manage your school's lost and found items efficiently
+                </p>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6); margin-bottom: var(--space-12);">
+                <div class="stat-card card">
+                    <div class="card-body" style="text-align: center;">
+                        <div class="stat-icon" style="width: 3rem; height: 3rem; background: var(--primary-100); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                            <i class="fas fa-users" style="color: var(--primary-600); font-size: var(--font-size-xl);"></i>
+                        </div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--gray-900); margin-bottom: var(--space-1);" id="totalStudents">0</h3>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Total Students</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card">
+                    <div class="card-body" style="text-align: center;">
+                        <div class="stat-icon" style="width: 3rem; height: 3rem; background: rgba(16, 185, 129, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                            <i class="fas fa-search" style="color: var(--success-500); font-size: var(--font-size-xl);"></i>
+                        </div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--gray-900); margin-bottom: var(--space-1);" id="lostItems">0</h3>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Lost Items</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card">
+                    <div class="card-body" style="text-align: center;">
+                        <div class="stat-icon" style="width: 3rem; height: 3rem; background: rgba(245, 158, 11, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                            <i class="fas fa-check-circle" style="color: var(--warning-500); font-size: var(--font-size-xl);"></i>
+                        </div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--gray-900); margin-bottom: var(--space-1);" id="foundItems">0</h3>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Found Items</p>
+                    </div>
+                </div>
+
+                <div class="stat-card card">
+                    <div class="card-body" style="text-align: center;">
+                        <div class="stat-icon" style="width: 3rem; height: 3rem; background: rgba(239, 68, 68, 0.1); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+                            <i class="fas fa-handshake" style="color: var(--error-500); font-size: var(--font-size-xl);"></i>
+                        </div>
+                        <h3 style="font-size: var(--font-size-2xl); font-weight: 700; color: var(--gray-900); margin-bottom: var(--space-1);" id="returnedItems">0</h3>
+                        <p style="color: var(--gray-600); font-size: var(--font-size-sm);">Returned Items</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Grid -->
+            <div class="dashboard-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-8);">
+                <!-- Students Management -->
+                <div class="students-section">
+                    <div class="card">
+                        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <h2 class="card-title">Student Management</h2>
+                                <p class="card-description">Add and manage student profiles</p>
+                            </div>
+                            <a href="students/add.html" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Add Student
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <!-- Search and Filter -->
+                            <div style="display: flex; gap: var(--space-4); margin-bottom: var(--space-6);">
+                                <div style="flex: 1;">
+                                    <input 
+                                        type="text" 
+                                        id="searchStudents" 
+                                        class="form-input" 
+                                        placeholder="Search students by name or ID..."
+                                    >
+                                </div>
+                                <select id="filterGrade" class="form-select" style="width: auto;">
+                                    <option value="">All Grades</option>
+                                    <option value="1">Grade 1</option>
+                                    <option value="2">Grade 2</option>
+                                    <option value="3">Grade 3</option>
+                                    <option value="4">Grade 4</option>
+                                    <option value="5">Grade 5</option>
+                                </select>
+                            </div>
+
+                            <!-- Students Table -->
+                            <div class="table-container">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Student ID</th>
+                                            <th>Name</th>
+                                            <th>Grade</th>
+                                            <th>Contact</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="studentsTableBody">
+                                        <tr>
+                                            <td colspan="5" style="text-align: center; color: var(--gray-500); padding: var(--space-8);">
+                                                <i class="fas fa-users" style="font-size: var(--font-size-2xl); margin-bottom: var(--space-2); display: block;"></i>
+                                                No students added yet. <a href="students/add.html" style="color: var(--primary-600);">Add your first student</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions & Recent Activity -->
+                <div class="sidebar-section">
+                    <!-- Quick Actions -->
+                    <div class="card" style="margin-bottom: var(--space-6);">
+                        <div class="card-header">
+                            <h3 class="card-title">Quick Actions</h3>
+                        </div>
+                        <div class="card-body">
+                            <div style="display: grid; gap: var(--space-3);">
+                                <a href="students/add.html" class="btn btn-secondary btn-full">
+                                    <i class="fas fa-user-plus"></i>
+                                    Add New Student
+                                </a>
+                                <button class="btn btn-secondary btn-full" onclick="reportLostItem()">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    Report Lost Item
+                                </button>
+                                <button class="btn btn-secondary btn-full" onclick="reportFoundItem()">
+                                    <i class="fas fa-search"></i>
+                                    Report Found Item
+                                </button>
+                                <button class="btn btn-secondary btn-full" onclick="generateReport()">
+                                    <i class="fas fa-chart-bar"></i>
+                                    Generate Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Recent Activity</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="recentActivity" style="display: grid; gap: var(--space-3);">
+                                <div style="text-align: center; color: var(--gray-500); padding: var(--space-4);">
+                                    <i class="fas fa-clock" style="font-size: var(--font-size-xl); margin-bottom: var(--space-2); display: block;"></i>
+                                    No recent activity
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals will be added here by JavaScript -->
+    <div id="modalContainer"></div>
+
+    <script src="../js/validation.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student - Lost & Found</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="stylesheet" href="../../css/hero-animation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-brand" style="text-decoration: none; color: inherit;">
+                <i class="fas fa-search-location brand-icon"></i>
+                <span class="brand-text">Lost & Found</span>
+            </a>
+            <div class="nav-links">
+                <a href="../dashboard.html" class="nav-link">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </a>
+                <button id="logoutBtn" class="btn btn-secondary">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add Student Form -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container" style="max-width: 800px; margin: 0 auto;">
+                <!-- Page Header -->
+                <div style="text-align: center; margin-bottom: var(--space-8);">
+                    <h1 style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--gray-900); margin-bottom: var(--space-2);">
+                        Add New Student
+                    </h1>
+                    <p style="color: var(--gray-600); font-size: var(--font-size-lg);">
+                        Enter student information to add them to the Lost & Found system
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Student Information</h2>
+                        <p class="card-description">Fill in all required fields to create a new student profile.</p>
+                    </div>
+                    
+                    <div class="card-body">
+                        <!-- Success/Error Messages -->
+                        <div id="messageContainer"></div>
+                        
+                        <form id="addStudentForm" novalidate>
+                            <!-- Personal Information Section -->
+                            <div style="margin-bottom: var(--space-8);">
+                                <h3 style="font-size: var(--font-size-lg); font-weight: 600; color: var(--gray-800); margin-bottom: var(--space-4); padding-bottom: var(--space-2); border-bottom: 2px solid var(--primary-100);">
+                                    <i class="fas fa-user"></i> Personal Information
+                                </h3>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">
+                                            <i class="fas fa-user"></i> First Name *
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="firstName" 
+                                            name="firstName" 
+                                            class="form-input" 
+                                            placeholder="Enter first name"
+                                            required
+                                        >
+                                        <div class="form-error" id="firstNameError"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">
+                                            <i class="fas fa-user"></i> Last Name *
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="lastName" 
+                                            name="lastName" 
+                                            class="form-input" 
+                                            placeholder="Enter last name"
+                                            required
+                                        >
+                                        <div class="form-error" id="lastNameError"></div>
+                                    </div>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
+                                    <div class="form-group">
+                                        <label for="studentId" class="form-label">
+                                            <i class="fas fa-id-card"></i> Student ID *
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            id="studentId" 
+                                            name="studentId" 
+                                            class="form-input" 
+                                            placeholder="Enter student ID"
+                                            required
+                                        >
+                                        <div class="form-error" id="studentIdError"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="grade" class="form-label">
+                                            <i class="fas fa-graduation-cap"></i> Grade Level *
+                                        </label>
+                                        <select id="grade" name="grade" class="form-select" required>
+                                            <option value="">Select grade level</option>
+                                            <option value="1">Grade 1</option>
+                                            <option value="2">Grade 2</option>
+                                            <option value="3">Grade 3</option>
+                                            <option value="4">Grade 4</option>
+                                            <option value="5">Grade 5</option>
+                                            <option value="6">Grade 6</option>
+                                            <option value="7">Grade 7</option>
+                                            <option value="8">Grade 8</option>
+                                            <option value="9">Grade 9</option>
+                                            <option value="10">Grade 10</option>
+                                            <option value="11">Grade 11</option>
+                                            <option value="12">Grade 12</option>
+                                        </select>
+                                        <div class="form-error" id="gradeError"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact Information Section -->
+                            <div style="margin-bottom: var(--space-8);">
+                                <h3 style="font-size: var(--font-size-lg); font-weight: 600; color: var(--gray-800); margin-bottom: var(--space-4); padding-bottom: var(--space-2); border-bottom: 2px solid var(--primary-100);">
+                                    <i class="fas fa-address-book"></i> Contact Information
+                                </h3>
+                                
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4);">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">
+                                            <i class="fas fa-envelope"></i> Student Email *
+                                        </label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            name="email" 
+                                            class="form-input" 
+                                            placeholder="student@school.edu"
+                                            required
+                                        >
+                                        <div class="form-error" id="emailError"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="phone" class="form-label">
+                                            <i class="fas fa-phone"></i> Phone Number *
+                                        </label>
+                                        <input 
+                                            type="tel" 
+                                            id="phone" 
+                                            name="phone" 
+                                            class="form-input" 
+                                            placeholder="(555) 123-4567"
+                                            required
+                                        >
+                                        <div class="form-error" id="phoneError"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="parentEmail" class="form-label">
+                                        <i class="fas fa-user-friends"></i> Parent/Guardian Email
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="parentEmail" 
+                                        name="parentEmail" 
+                                        class="form-input" 
+                                        placeholder="parent@email.com (optional)"
+                                    >
+                                    <div class="form-error" id="parentEmailError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="address" class="form-label">
+                                        <i class="fas fa-home"></i> Home Address
+                                    </label>
+                                    <textarea 
+                                        id="address" 
+                                        name="address" 
+                                        class="form-textarea" 
+                                        placeholder="Enter home address (optional)"
+                                        rows="3"
+                                    ></textarea>
+                                    <div class="form-error" id="addressError"></div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Information Section -->
+                            <div style="margin-bottom: var(--space-8);">
+                                <h3 style="font-size: var(--font-size-lg); font-weight: 600; color: var(--gray-800); margin-bottom: var(--space-4); padding-bottom: var(--space-2); border-bottom: 2px solid var(--primary-100);">
+                                    <i class="fas fa-info-circle"></i> Additional Information
+                                </h3>
+                                
+                                <div class="form-group">
+                                    <label for="emergencyContact" class="form-label">
+                                        <i class="fas fa-phone-alt"></i> Emergency Contact
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="emergencyContact" 
+                                        name="emergencyContact" 
+                                        class="form-input" 
+                                        placeholder="Emergency contact name and phone"
+                                    >
+                                    <div class="form-error" id="emergencyContactError"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="notes" class="form-label">
+                                        <i class="fas fa-sticky-note"></i> Additional Notes
+                                    </label>
+                                    <textarea 
+                                        id="notes" 
+                                        name="notes" 
+                                        class="form-textarea" 
+                                        placeholder="Any additional information about the student (optional)"
+                                        rows="3"
+                                    ></textarea>
+                                    <div class="form-error" id="notesError"></div>
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div style="display: flex; gap: var(--space-4); justify-content: flex-end; padding-top: var(--space-6); border-top: 1px solid var(--gray-200);">
+                                <a href="../dashboard.html" class="btn btn-secondary btn-large">
+                                    <i class="fas fa-times"></i>
+                                    Cancel
+                                </a>
+                                <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                                    <i class="fas fa-user-plus"></i>
+                                    Add Student
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../../js/validation.js"></script>
+    <script>
+        // Add Student Form Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+            if (!currentUser) {
+                window.location.href = '../login.html';
+                return;
+            }
+
+            // Setup logout functionality
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                if (confirm('Are you sure you want to logout?')) {
+                    localStorage.removeItem('currentUser');
+                    window.location.href = '../login.html';
+                }
+            });
+
+            const validator = new FormValidator();
+            const form = document.getElementById('addStudentForm');
+            
+            // Form validation configuration
+            const formConfig = {
+                firstName: [
+                    { type: 'required' },
+                    { type: 'minLength', value: 2 },
+                    { type: 'maxLength', value: 50 }
+                ],
+                lastName: [
+                    { type: 'required' },
+                    { type: 'minLength', value: 2 },
+                    { type: 'maxLength', value: 50 }
+                ],
+                studentId: [
+                    { type: 'required' },
+                    { type: 'minLength', value: 3 },
+                    { type: 'maxLength', value: 20 }
+                ],
+                grade: [
+                    { type: 'required' }
+                ],
+                email: [
+                    { type: 'required' },
+                    { type: 'email' }
+                ],
+                phone: [
+                    { type: 'required' },
+                    { type: 'phone' }
+                ],
+                parentEmail: [
+                    { type: 'email' }
+                ]
+            };
+
+            // Setup real-time validation
+            validator.setupRealTimeValidation(formConfig);
+            
+            // Auto-format phone number
+            const phoneField = document.getElementById('phone');
+            phoneField.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 6) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                } else if (value.length >= 3) {
+                    value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+                }
+                e.target.value = value;
+            });
+
+            // Auto-capitalize names
+            ['firstName', 'lastName'].forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                field.addEventListener('input', function(e) {
+                    const words = e.target.value.split(' ');
+                    const capitalizedWords = words.map(word => 
+                        word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+                    );
+                    e.target.value = capitalizedWords.join(' ');
+                });
+            });
+
+            // Generate student ID suggestion
+            const studentIdField = document.getElementById('studentId');
+            const firstNameField = document.getElementById('firstName');
+            const lastNameField = document.getElementById('lastName');
+            
+            function generateStudentId() {
+                const firstName = firstNameField.value.trim();
+                const lastName = lastNameField.value.trim();
+                
+                if (firstName && lastName && !studentIdField.value) {
+                    const year = new Date().getFullYear();
+                    const initials = firstName.charAt(0) + lastName.charAt(0);
+                    const randomNum = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+                    studentIdField.value = `${year}${initials.toUpperCase()}${randomNum}`;
+                }
+            }
+            
+            firstNameField.addEventListener('blur', generateStudentId);
+            lastNameField.addEventListener('blur', generateStudentId);
+
+            // Handle form submission
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                const { isValid, formData } = validator.validateForm(formConfig);
+                
+                if (!isValid) {
+                    showMessage('messageContainer', 'Please fix the errors above before submitting.', 'error');
+                    return;
+                }
+
+                // Check for duplicate student ID
+                const existingStudents = JSON.parse(localStorage.getItem('students') || '[]');
+                const duplicateId = existingStudents.find(s => s.studentId === formData.studentId);
+                
+                if (duplicateId) {
+                    validator.showFieldError('studentId', ['This student ID already exists']);
+                    showMessage('messageContainer', 'Student ID already exists. Please use a different ID.', 'error');
+                    return;
+                }
+
+                // Show loading state
+                showButtonLoading('submitBtn', 'Adding Student...');
+                
+                try {
+                    // Simulate API call
+                    await new Promise(resolve => setTimeout(resolve, 1500));
+                    
+                    // Create student object
+                    const newStudent = {
+                        id: Date.now().toString(),
+                        ...formData,
+                        createdAt: new Date().toISOString(),
+                        createdBy: currentUser.id
+                    };
+                    
+                    // Add to students array
+                    existingStudents.push(newStudent);
+                    localStorage.setItem('students', JSON.stringify(existingStudents));
+                    
+                    // Show success message
+                    showMessage('messageContainer', 'Student added successfully! Redirecting to dashboard...', 'success');
+                    
+                    // Redirect to dashboard after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = '../dashboard.html';
+                    }, 2000);
+                    
+                } catch (error) {
+                    showMessage('messageContainer', 'Failed to add student. Please try again.', 'error');
+                    resetButtonState('submitBtn', 'Add Student', 'fas fa-user-plus');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
